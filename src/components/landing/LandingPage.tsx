@@ -17,6 +17,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import {
+  demoUrl,
   faq,
   heroLines,
   roadmap,
@@ -89,8 +90,8 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
                 explanations and research assistance are planned.
               </p>
               <div data-hero-copy className="hero-actions">
-                <a href="#product" className={buttonVariants({ size: "lg" })}>
-                  Explore the research workflow{" "}
+                <a href={demoUrl} className={buttonVariants({ size: "lg" })}>
+                  Try the interactive demo{" "}
                   <ArrowUpRight data-icon="inline-end" />
                 </a>
                 <a href="#roadmap" className="text-link">
@@ -479,8 +480,8 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
               <br />
               Test again.
             </h2>
-            <a href="#product" className={buttonVariants({ size: "lg" })}>
-              Explore the research workflow{" "}
+            <a href={demoUrl} className={buttonVariants({ size: "lg" })}>
+              Try the interactive demo{" "}
               <ArrowUpRight data-icon="inline-end" />
             </a>
             <p className="risk-disclosure">
@@ -535,6 +536,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           </a>
         </div>
         <nav aria-label="Legal navigation">
+          <a href={demoUrl}>Interactive demo</a>
           <a href="/privacy/">Privacy</a>
           <a href="/disclaimer/">Research disclaimer</a>
           <a href="/media/react-bits-license.txt">Component notices</a>

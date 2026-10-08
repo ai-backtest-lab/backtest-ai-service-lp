@@ -9,6 +9,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { demoUrl } from "@/lib/landingContent";
 const links = [
   ["Platform", "#product"],
   ["Claude AI", "#claude-ai"],
@@ -36,10 +37,10 @@ export function SiteHeader() {
         ))}
       </nav>
       <a
-        href="#product"
+        href={demoUrl}
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
-        Explore workflow <ArrowUpRight data-icon="inline-end" />
+        Try demo <ArrowUpRight data-icon="inline-end" />
       </a>
       <div className="mobile-nav">
         <Sheet open={open} onOpenChange={setOpen}>

@@ -15,6 +15,8 @@ export const siteConfig: LandingIdentity = {
   supportEmail: "support@aibacktestlab.com",
   release: true,
 };
+// The public interactive demo runs synthetic data on its own subdomain.
+export const demoUrl = "https://demo.aibacktestlab.com/";
 export function landingIdentity(): LandingIdentity {
   return siteConfig;
 }

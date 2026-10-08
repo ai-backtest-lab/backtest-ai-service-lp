@@ -35,6 +35,14 @@ describe("truthful standalone landing", () => {
         .some((a) => a.getAttribute("href")?.startsWith("/api")),
     ).toBe(false);
     expect(screen.queryByRole("link", { name: "Open dashboard" })).toBeNull();
+    expect(
+      screen.getAllByRole("link", { name: /interactive demo/i }),
+    ).not.toHaveLength(0);
+    for (const link of screen.getAllByRole("link", {
+      name: /interactive demo/i,
+    })) {
+      expect(link).toHaveAttribute("href", "https://demo.aibacktestlab.com/");
+    }
     expect(screen.getByRole("link", { name: /founder@/ })).toHaveAttribute(
       "href",
       "mailto:founder@aibacktestlab.com",
