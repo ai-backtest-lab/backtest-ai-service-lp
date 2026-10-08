@@ -9,7 +9,7 @@ export function WorkflowStory() {
           <article key={step.number} className="workflow-panel">
             <div className="workflow-caption">
               <span className="eyebrow">
-                STEP {step.number} / RESEARCH LOOP
+                Step {step.number} / Research loop
               </span>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
@@ -26,10 +26,10 @@ export function WorkflowStory() {
               <div className="workflow-idea">
                 <span className="mono">
                   {i === 3
-                    ? "REPORT → INTERPRETATION"
+                    ? "Report → Interpretation"
                     : i === 4
-                      ? "OBSERVATION → HYPOTHESIS"
-                      : "HYPOTHESIS → NEW TEST"}
+                      ? "Observation → Hypothesis"
+                      : "Hypothesis → New test"}
                 </span>
                 <h4>
                   {i === 3

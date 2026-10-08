@@ -31,3 +31,7 @@ Theo yêu cầu deployment mới, production metadata/indexing được bật v�
 Bốn bản TS-CSS lấy qua shadcn registry chính thức, sau đó adapt lifecycle/type/accessibility. [Provenance hashes](react-bits-provenance.json), [license](REACT_BITS_LICENSE.md) giữ nguồn/điều kiện; không bán lại component library. Không cần runtime package React Bits hoặc thêm smooth-scroll library.
 
 Make targets setup/build/dev/preview/stop/status/check. Native dev loopback3220, static preview loopback3221; lifecycle guard exact repo/PID start-time, không chiếm process trên port đã bận. Build tạo gzip sidecars; local preview phục vụ content encoding/cache headers tương tự static hosting để đo performance lab có ý nghĩa. H1 không fade sau hydration để tránh reset mốc LCP.
+
+## Typography — cập nhật 2026-10-08
+
+Operator yêu cầu bỏ nhãn viết hoa toàn bộ. Eyebrow, step captions, chart labels, lineage và navigation branding dùng sentence case/proper brand case; giữ acronym AI/API/BTC/USD và quarter dates. Không đổi layout, animation hoặc claim/status. CSS không ép text-transform uppercase.

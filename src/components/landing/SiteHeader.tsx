@@ -25,7 +25,7 @@ export function SiteHeader() {
           ai<span>↗</span>
         </span>
         <span>
-          BACKTEST<span className="brand-lab"> LAB</span>
+          Backtest<span className="brand-lab"> Lab</span>
         </span>
       </a>
       <nav className="desktop-nav" aria-label="Primary navigation">

@@ -70,8 +70,8 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           <div className="hero-grid">
             <div className="hero-copy">
               <div data-hero-copy className="hero-eyebrow">
-                <span className="status-dot" /> QUANTITATIVE RESEARCH · AI
-                PLANNED
+                <span className="status-dot" /> Quantitative research · AI
+                planned
               </div>
               <h1>
                 Backtest with Data.
@@ -113,14 +113,14 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </div>
             <div className="hero-visual" data-hero-copy>
               <div className="hero-visual-label mono">
-                <span>AI BACKTEST LAB / RESEARCH LOOP</span>
+                <span>AI Backtest Lab / Research loop</span>
                 <span>01 — 06</span>
               </div>
               <ResearchPreview />
               <div className="hero-insight">
                 <div>
                   <span className="insight-symbol">✳</span>
-                  <span className="mono">CLAUDE INSIGHTS</span>
+                  <span className="mono">Claude insights</span>
                   <Badge variant="outline">Concept · Planned</Badge>
                 </div>
                 <p>
@@ -135,16 +135,16 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </div>
           </div>
           <div className="hero-bottom mono">
-            <span>BUILD → BACKTEST → QUANTIFY → EXPLAIN → VALIDATE</span>
+            <span>Build → Backtest → Quantify → Explain → Validate</span>
             <a href="#problem">
-              SCROLL TO EXPLORE <span>↓</span>
+              Scroll to explore <span>↓</span>
             </a>
           </div>
         </section>
         <section id="problem" className="section-shell problem-section">
           <div className="section-meta">
-            <span className="eyebrow">01 / THE RESEARCH PROBLEM</span>
-            <span className="mono">BEYOND THE HEADLINE RETURN</span>
+            <span className="eyebrow">01 / The research problem</span>
+            <span className="mono">Beyond the headline return</span>
           </div>
           <ScrollReveal baseOpacity={0.65} blurStrength={1.5}>
             A backtest can show the numbers. Understanding them is harder.
@@ -177,7 +177,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="product" className="section-shell product-section">
           <div className="section-meta">
-            <span className="eyebrow">02 / HOW IT WORKS</span>
+            <span className="eyebrow">02 / How it works</span>
             <Badge variant="outline">Research before you trade</Badge>
           </div>
           <div className="section-intro" data-reveal>
@@ -199,9 +199,9 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           className="section-shell capabilities-section"
         >
           <div className="section-meta">
-            <span className="eyebrow">03 / THE QUANTITATIVE FOUNDATION</span>
+            <span className="eyebrow">03 / The quantitative foundation</span>
             <span className="mono">
-              PRIVATE PRODUCT · MARKET-SPECIFIC COVERAGE
+              Private product · Market-specific coverage
             </span>
           </div>
           <div className="section-intro" data-reveal>
@@ -231,7 +231,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             ))}
           </div>
           <div className="coverage-note" data-reveal>
-            <span className="mono">MARKET SCOPE</span>
+            <span className="mono">Market scope</span>
             <p>
               Historical backtesting focuses on crypto. Vietnam equity research
               is an internal preview. Source-backed backtesting and execution
@@ -242,7 +242,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="claude-ai" className="section-shell claude-section">
           <div className="section-meta">
-            <span className="eyebrow">04 / PLANNED CLAUDE API INTEGRATION</span>
+            <span className="eyebrow">04 / Planned Claude API integration</span>
             <Badge variant="secondary">AI analysis · Planned</Badge>
           </div>
           <div className="section-intro" data-reveal>
@@ -283,7 +283,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="validation" className="section-shell validation-section">
           <div className="section-meta">
-            <span className="eyebrow">05 / VALIDATION & TRUST</span>
+            <span className="eyebrow">05 / Validation & trust</span>
             <ShieldCheck />
           </div>
           <div className="masked-wrap" data-reveal>
@@ -318,17 +318,17 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </div>
           </div>
           <div className="lineage mono" aria-label="Research evidence lineage">
-            <span>DATASET</span>
+            <span>Dataset</span>
             <ArrowRight />
-            <span>STRATEGY</span>
+            <span>Strategy</span>
             <ArrowRight />
-            <span>ENGINE RESULT</span>
+            <span>Engine result</span>
             <ArrowRight />
             <span>
-              AI REPORT <small>PLANNED</small>
+              AI report <small>Planned</small>
             </span>
             <ArrowRight />
-            <span>NEXT TEST</span>
+            <span>Next test</span>
           </div>
           <p className="risk-disclosure">
             Backtesting is hypothetical. Past performance does not guarantee
@@ -341,9 +341,9 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           className="section-shell architecture-section"
         >
           <div className="section-meta">
-            <span className="eyebrow">06 / INDEPENDENT SERVICES</span>
+            <span className="eyebrow">06 / Independent services</span>
             <span className="mono">
-              SEPARATE BOUNDARIES. ONE RESEARCH VISION.
+              Separate boundaries. One research vision.
             </span>
           </div>
           <div className="section-intro" data-reveal>
@@ -406,7 +406,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="roadmap" className="section-shell roadmap-section">
           <div className="section-meta">
-            <span className="eyebrow">07 / THE 24-MONTH ROADMAP</span>
+            <span className="eyebrow">07 / The 24-month roadmap</span>
             <span className="mono">Q4 2026 — Q3 2028</span>
           </div>
           <div className="section-intro" data-reveal>
@@ -441,8 +441,8 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="about" className="section-shell about-section">
           <div className="section-meta">
-            <span className="eyebrow">08 / BUILT WITH INTENT</span>
-            <span className="mono">INDEPENDENT PROJECT</span>
+            <span className="eyebrow">08 / Built with intent</span>
+            <span className="mono">Independent project</span>
           </div>
           <div className="about-grid" data-reveal>
             <h2>
@@ -471,7 +471,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="contact" className="section-shell contact-section">
           <div className="contact-heading" data-reveal>
-            <span className="eyebrow">09 / WHAT COMES NEXT</span>
+            <span className="eyebrow">09 / What comes next</span>
             <h2>
               Research better.
               <br />
@@ -504,7 +504,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </div>
           </div>
           <div className="faq">
-            <span className="eyebrow">A FEW CLEAR ANSWERS</span>
+            <span className="eyebrow">A few clear answers</span>
             <Accordion>
               {faq.map(([question, answer]) => (
                 <AccordionItem key={question} value={question}>
@@ -521,7 +521,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           <span className="brand-symbol">
             ai<span>↗</span>
           </span>
-          <span>AI BACKTEST LAB</span>
+          <span>AI Backtest Lab</span>
         </a>
         <p>Private quantitative research. Claude analysis planned.</p>
         <div className="footer-contact">
