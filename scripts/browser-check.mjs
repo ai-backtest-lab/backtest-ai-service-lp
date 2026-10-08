@@ -126,54 +126,49 @@ function track(p) {
         .first()
         .click();
       await p.waitForTimeout(700);
-      if (width >= 1024) {
-        await p.locator('[data-chapter-button="3"]').click();
-        await p.waitForTimeout(500);
+      assert.equal(await p.locator(".workflow-panel").count(), 6);
+      for (const title of [
+        "Define strategy",
+        "Run backtest",
+        "Measure results",
+        "Analyze with Claude",
+        "Form new hypotheses",
+        "Validate again",
+      ])
         assert.equal(
           await p
-            .locator(".workflow-story")
-            .getAttribute("data-active-chapter"),
-          "3",
+            .getByRole("heading", { name: title, level: 3, exact: true })
+            .isVisible(),
+          true,
         );
-        assert.equal(
-          await p
-            .locator("[data-chapter]")
-            .nth(3)
-            .evaluate((el) => el.inert),
-          false,
-        );
-        await p.locator('[data-chapter-button="5"]').click();
-        await p.waitForTimeout(500);
-        assert.equal(
-          await p
-            .locator(".workflow-story")
-            .getAttribute("data-active-chapter"),
-          "5",
-        );
-        await p.locator('[data-chapter-button="0"]').click();
-        await p.waitForTimeout(500);
-        assert.equal(
-          await p
-            .locator(".workflow-story")
-            .getAttribute("data-active-chapter"),
-          "0",
-        );
-      } else {
-        assert.equal(
-          await p
-            .locator(".workflow-story")
-            .getAttribute("data-active-chapter"),
-          null,
-        );
+      assert.equal(await p.locator(".pin-spacer").count(), 0);
+      assert.equal(await p.locator("[data-chapter-button]").count(), 0);
+      const normalFlow = await p.locator(".workflow-panels").evaluate((el) => {
+        const before = el.getBoundingClientRect().top;
+        window.scrollBy({ top: 160, behavior: "instant" });
+        return before - el.getBoundingClientRect().top;
+      });
+      assert.equal(Math.round(normalFlow), 160);
+      if (width < 768) {
         await p.getByRole("button", { name: "Open navigation" }).click();
         await p
           .getByRole("navigation", { name: "Mobile navigation" })
           .getByRole("link", { name: "Claude AI" })
           .click();
-        await p.waitForTimeout(300);
-        assert.equal(await p.getByRole("dialog").count(), 0);
+        await p.getByRole("dialog").waitFor({ state: "hidden" });
       }
       await p.locator("#claude-ai").scrollIntoViewIfNeeded();
+      assert.equal(
+        await p.locator(".claude-story").getAttribute("data-phase"),
+        null,
+      );
+      for (const title of ["Observe", "Question", "Test"])
+        assert.equal(
+          await p
+            .getByRole("heading", { name: title, level: 4, exact: true })
+            .isVisible(),
+          true,
+        );
       await p.waitForTimeout(700);
       await p
         .locator(".claude-stage")
@@ -199,7 +194,8 @@ function track(p) {
       result.scenarios.push({
         width,
         status: "PASS",
-        pin: width >= 1024,
+        pin: false,
+        staticWorkflow: true,
         mobileMenu: width < 768,
         faq: true,
       });
@@ -237,12 +233,10 @@ function track(p) {
       .screenshot({ path: "tmp/reduced-motion.png" });
     result.scenarios.push({ reducedMotion: true, status: "PASS" });
     await reduced.close();
-    const nojs = await context
-      .browser()
-      .newContext({
-        javaScriptEnabled: false,
-        viewport: { width: 1440, height: 1000 },
-      });
+    const nojs = await context.browser().newContext({
+      javaScriptEnabled: false,
+      viewport: { width: 1440, height: 1000 },
+    });
     const staticPage = await nojs.newPage();
     track(staticPage);
     await staticPage.goto("http://127.0.0.1:3221");

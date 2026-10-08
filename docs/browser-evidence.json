@@ -1,18 +1,20 @@
 {
-  "started": "2026-10-08T06:38:37.448Z",
+  "started": "2026-10-08T06:58:08.470Z",
   "headed": true,
   "scenarios": [
     {
       "width": 1440,
       "status": "PASS",
-      "pin": true,
+      "pin": false,
+      "staticWorkflow": true,
       "mobileMenu": false,
       "faq": true
     },
     {
       "width": 1024,
       "status": "PASS",
-      "pin": true,
+      "pin": false,
+      "staticWorkflow": true,
       "mobileMenu": false,
       "faq": true
     },
@@ -20,6 +22,7 @@
       "width": 390,
       "status": "PASS",
       "pin": false,
+      "staticWorkflow": true,
       "mobileMenu": true,
       "faq": true
     },
@@ -27,6 +30,7 @@
       "width": 375,
       "status": "PASS",
       "pin": false,
+      "staticWorkflow": true,
       "mobileMenu": true,
       "faq": true
     },
@@ -62,5 +66,5 @@
     }
   ],
   "boundary404": true,
-  "finished": "2026-10-08T06:39:23.701Z"
+  "finished": "2026-10-08T06:58:31.088Z"
 }

@@ -692,35 +692,6 @@ body {
   font-size: 13px;
   margin-top: 13px;
 }
-.workflow-stage {
-  padding-bottom: 10px;
-}
-.chapter-navigation {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  margin-bottom: 25px;
-}
-.chapter-navigation button {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 10px;
-  border-top: 1px solid var(--border);
-  padding-top: 13px;
-  text-align: left;
-  color: var(--muted-foreground);
-  font-size: 11px;
-  cursor: pointer;
-}
-.chapter-navigation button[data-active="true"] {
-  border-color: var(--primary);
-  color: var(--foreground);
-}
-.chapter-navigation .mono {
-  font-size: 9px;
-  color: var(--primary);
-}
 .workflow-panels {
   display: flex;
   flex-direction: column;
@@ -770,18 +741,6 @@ body {
 }
 .workflow-idea [data-slot="badge"] {
   width: max-content;
-}
-.workflow-story[data-active-chapter] .workflow-panels {
-  position: relative;
-  height: 430px;
-  display: block;
-}
-.workflow-story[data-active-chapter] .workflow-panel {
-  position: absolute;
-  inset: 0;
-}
-.workflow-story[data-active-chapter] .workflow-stage {
-  height: 520px;
 }
 .capability-grid {
   display: grid;
@@ -895,7 +854,6 @@ body {
 .report-section {
   border-top: 1px solid var(--border);
   padding-block: 14px;
-  transition: opacity 0.3s ease;
 }
 .report-section-title {
   display: flex;
@@ -917,14 +875,6 @@ body {
 .report-section p {
   font-size: 11px;
   margin-top: 5px;
-}
-.claude-story[data-phase="0"] [data-report-phase="1"],
-.claude-story[data-phase="0"] [data-report-phase="2"],
-.claude-story[data-phase="1"] [data-report-phase="0"],
-.claude-story[data-phase="1"] [data-report-phase="2"],
-.claude-story[data-phase="2"] [data-report-phase="0"],
-.claude-story[data-phase="2"] [data-report-phase="1"] {
-  opacity: 0.8;
 }
 .ai-capabilities {
   display: grid;
@@ -1191,9 +1141,6 @@ body {
   }
 }
 @media (max-width: 1023px), (max-height: 719px) {
-  .chapter-navigation {
-    display: none;
-  }
   .workflow-panel {
     padding-block: 25px;
     border-top: 1px solid var(--border);

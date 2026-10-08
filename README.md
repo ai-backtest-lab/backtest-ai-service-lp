@@ -6,7 +6,7 @@ code: package.json, next.config.ts, Makefile, scripts/site.py, src/app/, src/lib
 
 # AI Backtest Lab — landing page
 
-Website Next.js riêng cho **AI Backtest Lab**, theo brand/roadmap operator. Mười sections, Plasma hero, GSAP pinned research/Claude stages, ScrollReveal, TextType và MaskedHeading; desktop/mobile/reduced-motion layouts.
+Website Next.js riêng cho **AI Backtest Lab**, theo brand/roadmap operator. Mười sections, Plasma hero, workflow/Claude sections static theo luồng trang, ScrollReveal, TextType và MaskedHeading; desktop/mobile/reduced-motion layouts.
 
 Source này chỉ là landing: **không có dashboard, trading API, live AI endpoint hoặc quyền đặt lệnh**. Claude API integration giữ nhãn Planned. Các chart/report là illustration có nhãn, không phải performance đã đo. Không tự publish hoặc gửi Claude for Startups application.
 

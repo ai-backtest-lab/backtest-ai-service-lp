@@ -1,10 +1,5 @@
-"use client";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Badge } from "@/components/ui/badge";
 import TextType from "./effects/TextType";
-gsap.registerPlugin(ScrollTrigger);
 const sections = [
   [
     "01",
@@ -26,36 +21,8 @@ const sections = [
   ],
 ];
 export function ClaudeStory() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const mm = gsap.matchMedia();
-    mm.add(
-      "(min-width:1024px) and (min-height:720px) and (prefers-reduced-motion:no-preference)",
-      () => {
-        el.dataset.phase = "0";
-        ScrollTrigger.create({
-          id: "claude-story",
-          trigger: el,
-          start: "top top+=90",
-          end: () => `+=${window.innerHeight * 2}`,
-          pin: el.querySelector(".claude-stage"),
-          pinSpacing: true,
-          invalidateOnRefresh: true,
-          onUpdate: (st) => {
-            el.dataset.phase = String(Math.min(2, Math.floor(st.progress * 3)));
-          },
-        });
-        return () => {
-          delete el.dataset.phase;
-        };
-      },
-    );
-    return () => mm.revert();
-  }, []);
   return (
-    <div className="claude-story" ref={ref}>
+    <div className="claude-story">
       <div className="claude-stage">
         <div className="report-source">
           <span className="eyebrow">01 / QUANTITATIVE INPUT</span>
@@ -102,12 +69,8 @@ export function ClaudeStory() {
               startOnVisible
             />
           </div>
-          {sections.map(([number, title, question, body], i) => (
-            <section
-              key={title}
-              data-report-phase={i}
-              className="report-section"
-            >
+          {sections.map(([number, title, question, body]) => (
+            <section key={title} className="report-section">
               <div className="report-section-title">
                 <span className="mono">{number}</span>
                 <h4>{title}</h4>

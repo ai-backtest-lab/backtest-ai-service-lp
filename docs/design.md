@@ -12,11 +12,11 @@ Brand và copy theo [tài liệu operator](brand-roadmap.md): AI Backtest Lab, a
 
 ## Bố cục và motion
 
-Mười sections: Hero, Problem, Six-step workflow, Capabilities, Claude AI, Validation, Architecture, Roadmap, About, Contact/FAQ. Hero dùng Plasma trên dark/green semantic tokens; headline ổn định đọc được từ HTML, TextType dùng ở dòng phụ. Product và Claude có hai pinned stages desktop; mobile/viewport thấp/reduced motion dùng narrative linear. ScrollReveal dùng cho statement, MaskedHeading cho Validation, GSAP reveal nhẹ cho các section khác.
+Mười sections: Hero, Problem, Six-step workflow, Capabilities, Claude AI, Validation, Architecture, Roadmap, About, Contact/FAQ. Hero dùng Plasma trên dark/green semantic tokens; headline ổn định đọc được từ HTML, TextType dùng ở dòng phụ. Theo chỉ đạo operator, Product và Claude hiển thị static/linear trên mọi viewport: toàn bộ sáu bước và ba phần report cùng có trong luồng trang, không pin hoặc tiến độ theo cuộn. ScrollReveal dùng cho statement, MaskedHeading cho Validation, GSAP reveal nhẹ cho các section khác.
 
-Product navigation giữ chapter bằng scroll; nút chapter dùng instant scroll để tránh việc smooth-scroll đi qua chapter giữa và hiển thị sai state. Nội dung Report là concept minh họa, không giả response API Claude. Chart là illustration không có performance metrics. Nhãn Planned/Illustrative hiện ở ngay visual và hero, không có testimonials, client counts hay giả lợi nhuận.
+Không còn chapter navigation, inactive panels hoặc report-phase dimming. Nội dung Report là concept minh họa, không giả response API Claude. Chart là illustration không có performance metrics. Nhãn Planned/Illustrative hiện ở ngay visual và hero, không có testimonials, client counts hay giả lợi nhuận.
 
-Pin/tweens scoped; route departure và breakpoint/reduced-motion changes revert đúng owner. Hero WebGL dừng khi offscreen/hidden tab; lỗi context dùng CSS fallback, không tiếp tục render bằng GPU resources đã invalidated. TextType và MaskedHeading có cleanup timer/tween/RAF; masked text có DOM fallback đọc được khi media/JS lỗi.
+Các text/reveal tweens còn lại được scoped và cleanup đúng owner; hai section Product/Claude không tạo ScrollTrigger. Hero WebGL dừng khi offscreen/hidden tab; lỗi context dùng CSS fallback, không tiếp tục render bằng GPU resources đã invalidated. TextType và MaskedHeading có cleanup timer/tween/RAF; masked text có DOM fallback đọc được khi media/JS lỗi.
 
 ## Public boundary và trạng thái sản phẩm
 
