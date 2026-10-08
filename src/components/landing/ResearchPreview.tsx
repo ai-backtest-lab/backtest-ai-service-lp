@@ -53,7 +53,7 @@ export function ResearchPreview({ chapter = 0 }: { chapter?: number }) {
           </div>
         </div>
         <div className="preview-sidebar">
-          <span className="eyebrow">RESEARCH CONTROLS</span>
+          <span className="eyebrow">Research controls</span>
           <span>Strategy hypothesis</span>
           <strong>Trend & breakout</strong>
           <span>Result assumptions</span>

@@ -106,7 +106,7 @@ function track(p) {
         viewport: { width: 1440, height: 1000 },
       },
     );
-    for (const width of [1440, 1024, 390, 375]) {
+    for (const width of [1440, 1024, 768, 390, 375, 320]) {
       const p = await context.newPage();
       track(p);
       await p.setViewportSize({ width, height: width < 768 ? 844 : 1000 });
@@ -115,6 +115,18 @@ function track(p) {
       await p.waitForTimeout(600);
       assert.equal(await p.locator("main > section").count(), 10);
       assert.equal(
+        await p
+          .getByRole("link", { name: "Contact us", exact: true })
+          .getAttribute("href"),
+        "mailto:founder@aibacktestlab.com?subject=AI%20Backtest%20Lab%20inquiry",
+      );
+      assert.equal(
+        await p
+          .getByRole("link", { name: "Get support", exact: true })
+          .getAttribute("href"),
+        "mailto:support@aibacktestlab.com?subject=AI%20Backtest%20Lab%20support",
+      );
+      assert.equal(
         await p.evaluate(
           () => document.documentElement.scrollWidth > innerWidth,
         ),
@@ -122,7 +134,10 @@ function track(p) {
       );
       await p.screenshot({ path: `tmp/hero-${width}.png` });
       await p
-        .getByRole("link", { name: "Explore the platform", exact: true })
+        .getByRole("link", {
+          name: "Explore the research workflow",
+          exact: true,
+        })
         .first()
         .click();
       await p.waitForTimeout(700);
@@ -149,7 +164,7 @@ function track(p) {
         return before - el.getBoundingClientRect().top;
       });
       assert.equal(Math.round(normalFlow), 160);
-      if (width < 768) {
+      if (width < 1024) {
         await p.getByRole("button", { name: "Open navigation" }).click();
         await p
           .getByRole("navigation", { name: "Mobile navigation" })
@@ -196,7 +211,7 @@ function track(p) {
         status: "PASS",
         pin: false,
         staticWorkflow: true,
-        mobileMenu: width < 768,
+        mobileMenu: width < 1024,
         faq: true,
       });
       await p.close();

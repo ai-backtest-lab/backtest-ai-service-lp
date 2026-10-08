@@ -24,10 +24,14 @@ Next.js App Router/TypeScript/Tailwind/shadcn, static export `out/`. Routes ch�
 
 Historical crypto research và market views là capability của private product hiện có, không phải feature runtime của site landing này. VN execution còn blocked và được nói rõ trong copy. Demo có private infrastructure; roadmap mô tả mở rộng validation/access, không phủ nhận service cũ đã tồn tại. Real vẫn frozen ở app cũ; roadmap không authorizes tiếp tục hoặc pilot.
 
-Mặc định preview noindex. Release build yêu cầu founder thật và email cùng domain qua environment; guard kiểm định dạng/consistency, **không chứng minh mailbox delivery hoặc domain ownership**. Operator phải kiểm các prerequisite đó trước public launch. Không auto-deploy hay gửi application.
+Theo yêu cầu deployment mới, production metadata/indexing được bật và public values cố định trong source, không có environment gate. Founder/support emails do operator cung cấp; operator xác nhận mailbox delivery/reply ngày 2026-10-08; không suy ra domain/Cloudflare account đã được kiểm. Không auto-deploy hoặc gửi application.
 
 ## React Bits và bằng chứng
 
 Bốn bản TS-CSS lấy qua shadcn registry chính thức, sau đó adapt lifecycle/type/accessibility. [Provenance hashes](react-bits-provenance.json), [license](REACT_BITS_LICENSE.md) giữ nguồn/điều kiện; không bán lại component library. Không cần runtime package React Bits hoặc thêm smooth-scroll library.
 
-Make targets setup/build/release-build/dev/preview/stop/status/check. Native dev loopback3220, static preview loopback3221; lifecycle guard exact repo/PID start-time, không chiếm process trên port đã bận. Build tạo gzip sidecars; local preview phục vụ content encoding/cache headers tương tự static hosting để đo performance lab có ý nghĩa. H1 không fade sau hydration để tránh reset mốc LCP.
+Make targets setup/build/dev/preview/stop/status/check. Native dev loopback3220, static preview loopback3221; lifecycle guard exact repo/PID start-time, không chiếm process trên port đã bận. Build tạo gzip sidecars; local preview phục vụ content encoding/cache headers tương tự static hosting để đo performance lab có ý nghĩa. H1 không fade sau hydration để tránh reset mốc LCP.
+
+## Typography — cập nhật 2026-10-08
+
+Operator yêu cầu bỏ nhãn viết hoa toàn bộ. Eyebrow, step captions, chart labels, lineage và navigation branding dùng sentence case/proper brand case; giữ acronym AI/API/BTC/USD và quarter dates. Không đổi layout, animation hoặc claim/status. CSS không ép text-transform uppercase.

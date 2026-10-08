@@ -388,3 +388,18 @@ Claude is intended to be a **reasoning and natural-language interpretation layer
 
 **Final positioning sentence:** **“AI Backtest Lab combines reproducible quantitative backtesting with Claude-powered research explanations to help traders understand strategy performance, evaluate risk, and decide what to test next.”**\
 *Use “combines” only after Claude actually works; until then use “is building a platform that will combine”.*
+
+## Bổ sung hiện hành — vòng content cuối trước release (2026-10-08)
+
+Bổ sung này cập nhật copy/status được dùng trên landing; giữ nguyên mục tiêu và bốn mốc Q4 2026–Q3 2028 của roadmap 24 tháng. Các ví dụ CTA/status trước đó là định hướng ban đầu, không phải chứng nhận capability public.
+
+- Hero: private quantitative research platform cho historical crypto backtesting; vấn đề là hiểu performance/risk và chọn câu hỏi nghiên cứu tiếp theo. Primary CTA hiện hành: `Explore the research workflow`, đến `#product`, không mở product. Public early access Planned.
+- Product: engine, parameters/source snapshots và trade inspection tồn tại private; nhãn `Private workspace · not publicly available`. Vietnam là internal preview; source-backed backtesting/execution unavailable.
+- Claude: Planned, POC chưa được trình bày như đã có. Input dự kiến gồm metrics, trade summaries, parameters, coverage và cost assumptions; output là giải thích drawdown/risk, limitations và hypotheses. Engine sở hữu calculations và quantitative validation; Claude không đặt lệnh hoặc hứa dự đoán returns.
+- Roadmap phase 1: `Private backtest core exists · Claude POC planned`; phase 2 thêm out-of-sample và sandbox forward-validation Planned; phase 3 research Q&A/experiment comparisons Planned; phase 4 beta/early access Planned. Mốc là mục tiêu, có thể đổi theo bằng chứng.
+- About: independent research startup phục vụ independent researchers, crypto strategy developers và systematic traders; differentiation là inspectable evidence cùng planned interpretation, không phải lợi nhuận tự động.
+- Metadata: `AI Backtest Lab | Quantitative Backtesting & AI Research Roadmap`; description `Private quantitative research for historical crypto backtesting. Claude-powered analysis is planned.` áp dụng HTML, Open Graph và Twitter.
+- Contact: founder@aibacktestlab.com và support@aibacktestlab.com. Operator xác nhận gửi/nhận và trả lời ngày 2026-10-08; UI, mailto và JSON-LD dùng cùng địa chỉ.
+- Giữ layout/dark theme/animations; typography uppercase là thay đổi thiết kế riêng, không trộn vào vòng claim review này.
+
+Căn cứ code/status nằm trong [claim ledger](claims.md). Chỉ push branch review; chưa merge main, deploy hoặc submit hồ sơ. Website rõ ràng và trung thực hỗ trợ việc đánh giá, không đảm bảo hồ sơ được chấp nhận.

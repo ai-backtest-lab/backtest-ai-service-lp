@@ -25,7 +25,7 @@ export function ClaudeStory() {
     <div className="claude-story">
       <div className="claude-stage">
         <div className="report-source">
-          <span className="eyebrow">01 / QUANTITATIVE INPUT</span>
+          <span className="eyebrow">01 / Quantitative input</span>
           <h3>
             The engine supplies
             <br />
@@ -59,7 +59,7 @@ export function ClaudeStory() {
             <Badge variant="outline">Planned</Badge>
           </div>
           <p className="report-caption mono">
-            ILLUSTRATIVE REPORT · NOT A LIVE AI RESPONSE
+            Illustrative report · Not a live AI response
           </p>
           <div className="report-intro">
             <TextType

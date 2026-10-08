@@ -1,42 +1,38 @@
 ---
 status: current
 last_verified: 2026-10-08
-code: package.json, next.config.ts, Makefile, scripts/site.py, src/app/, src/lib/landingContent.ts, docs/design.md
+code: package.json, next.config.ts, wrangler.jsonc, Makefile, src/lib/landingContent.ts, src/lib/seo.ts
 ---
 
-# AI Backtest Lab — landing page
+# AI Backtest Lab — static landing
 
-Website Next.js riêng cho **AI Backtest Lab**, theo brand/roadmap operator. Mười sections, Plasma hero, workflow/Claude sections static theo luồng trang, ScrollReveal, TextType và MaskedHeading; desktop/mobile/reduced-motion layouts.
+Next.js16 / TypeScript / Tailwind / shadcn, export tĩnh vào `out/` cho **Cloudflare Workers Static Assets**. Giữ10sections, hero Plasma và React Bits text effects; Product/Claude sections static, responsive từ320px đến desktop. Claude API integration vẫn Planned.
 
-Source này chỉ là landing: **không có dashboard, trading API, live AI endpoint hoặc quyền đặt lệnh**. Claude API integration giữ nhãn Planned. Các chart/report là illustration có nhãn, không phải performance đã đo. Không tự publish hoặc gửi Claude for Startups application.
+Public values cố định: AI Backtest Lab, https://aibacktestlab.com, founder@aibacktestlab.com, support@aibacktestlab.com. Không `.env`, backend, database, Docker, Claude key hoặc runtime Node server. Production metadata/indexing nằm trong HTML static; JSON-LD chỉ mô tả brand/site/contact thật, không bịa ratings/pricing.
 
-## Chạy local
+## Build và kiểm tra
 
-Cần Node.js 24+ (đã kiểm với Node26), pnpm12 và Python3 trên Linux.
+Node22+, pnpm12 (lockfile/packageManager12.6.0):
 
 ```bash
 make setup
-make dev       # http://127.0.0.1:3220
-make build     # static export out/, noindex mặc định
-make preview   # http://127.0.0.1:3221, dùng artifact đã build
-make status
-make stop      # chỉ dừng processes thuộc repo này, giữ source/build
+make check
+pnpm run build
+pnpm run seo:check
+pnpm run deploy:dry-run
 ```
 
-`make check` chạy tests, TypeScript và ESLint. `make browser-check` kiểm static preview bằng Chrome có giao diện và DevTools (cần Google Chrome/DISPLAY). `pnpm build` cũng tạo OG artwork/gzip sidecars. Static preview không cần backtest-service đang chạy. Chi tiết environment, ownership và release gate trong [runbook](docs/running.md).
+Cloudflare **Build command:** `pnpm run build`. **Deploy command:** `pnpm exec wrangler deploy`. [Guide đầy đủ/settings chính xác](docs/deployment.md). Không deploy tự động từ script kiểm tra. Wrangler Preview command được bản4.148.0 hỗ trợ; Dashboard đang tắt preview builds.
 
-## Public release chưa mở
+## Preview local tùy chọn
 
-Copy `.env.example` thành `.env.local` khi operator cung cấp founder/email thật. Domain hiện được chốt trong thiết kế là `https://aibacktestlab.com`. `make release-build` kiểm founder/email consistency, tạo indexable artifact; operator còn phải xác minh domain/HTTPS/mail delivery, host ownership và approve public deployment. Không cấu hình credential Claude/exchange vào repository này.
+```bash
+make dev       # http://127.0.0.1:3220
+make preview   # artifact build tại http://127.0.0.1:3221
+make status
+make stop
+```
 
-Nếu có host static, deploy **chỉ thư mục `out/`** sau launch review. Không deploy trading app hoặc copy API proxy vào đây. Landing chưa có waitlist backend; contact email chỉ xuất hiện khi được cấu hình thật.
+Python3/Linux chỉ dùng cho helper preview/ownership local, **không cần trên Cloudflare**. `make browser-check` kiểm Chrome headed/DevTools; `make capture-assets` chụp hero/logo của artifact hiện tại để cập nhật ảnh OG/favicon. Master snapshots ở `assets/`; build tạo ảnh1200×630 và icon16/32/48/180/192/512, faviconICO. Không cần Chrome trong build Cloudflare vì snapshots đã có trong source.
 
-## Tài liệu
-
-- [Brand/SEO/AI roadmap operator](docs/brand-roadmap.md)
-- [Thiết kế source riêng](docs/design.md)
-- [Claim ledger](docs/claims.md)
-- [Vận hành](docs/running.md)
-- [React Bits provenance](docs/react-bits-provenance.json) và [license](docs/REACT_BITS_LICENSE.md)
-
-Remote: `git@github.com.per:DyanNguyen22/backtest-ai-service-lp.git`. Repo app nghiên cứu cũ đã được giữ riêng; WIP migration cũ nằm ở stash914f748b của repo đó, không tự apply vào landing.
+Tài liệu: [design](docs/design.md), [claim ledger](docs/claims.md), [runbook](docs/running.md), [completion](docs/completion.md), [brand operator](docs/brand-roadmap.md), [React Bits license](docs/REACT_BITS_LICENSE.md). Repo này không thay app Backtest riêng.

@@ -1496,3 +1496,97 @@ body {
     transform: none;
   }
 }
+.contact-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 10px;
+}
+.footer-contact a {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: var(--primary);
+}
+.footer-contact span {
+  color: var(--muted-foreground);
+}
+.site-footer {
+  flex-wrap: wrap;
+}
+/* Tablet layouts keep navigation and paired research panels readable. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+    margin-left: auto;
+  }
+  .mobile-nav > button {
+    display: grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .hero-grid,
+  .workflow-panel,
+  .claude-stage,
+  .contact-section,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    width: 100%;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+  .hero-copy {
+    max-width: 680px;
+  }
+  .hero h1 {
+    font-size: 58px;
+  }
+  .section-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .section-intro > p {
+    max-width: 650px;
+  }
+  .workflow-panel,
+  .contact-section,
+  .about-grid {
+    gap: 35px;
+  }
+  .source-arrow {
+    display: none;
+  }
+  .capability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .hero-insight {
+    max-width: 250px;
+  }
+  .contact-heading > h2 {
+    font-size: 43px;
+  }
+  .workflow-idea {
+    padding: 24px;
+  }
+}

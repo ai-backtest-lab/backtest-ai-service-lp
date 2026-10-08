@@ -1,5 +1,5 @@
 {
-  "started": "2026-10-08T06:58:08.470Z",
+  "started": "2026-10-08T08:35:33.251Z",
   "headed": true,
   "scenarios": [
     {
@@ -19,6 +19,14 @@
       "faq": true
     },
     {
+      "width": 768,
+      "status": "PASS",
+      "pin": false,
+      "staticWorkflow": true,
+      "mobileMenu": true,
+      "faq": true
+    },
+    {
       "width": 390,
       "status": "PASS",
       "pin": false,
@@ -28,6 +36,14 @@
     },
     {
       "width": 375,
+      "status": "PASS",
+      "pin": false,
+      "staticWorkflow": true,
+      "mobileMenu": true,
+      "faq": true
+    },
+    {
+      "width": 320,
       "status": "PASS",
       "pin": false,
       "staticWorkflow": true,
@@ -66,5 +82,5 @@
     }
   ],
   "boundary404": true,
-  "finished": "2026-10-08T06:58:31.088Z"
+  "finished": "2026-10-08T08:36:07.425Z"
 }

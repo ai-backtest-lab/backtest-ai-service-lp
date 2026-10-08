@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = {
-  title: "Research disclaimer",
-  alternates: { canonical: "/disclaimer/" },
-};
+import { landingIdentity } from "@/lib/landingContent";
+import { disclaimerSeo, pageMetadata } from "@/lib/seo";
+import { StructuredData } from "@/components/StructuredData";
+const identity = landingIdentity();
+export const metadata = pageMetadata(identity, disclaimerSeo);
 export default function Disclaimer() {
   return (
     <main className="legal-page">
+      <StructuredData identity={identity} page={disclaimerSeo} />
       <Link href="/">← AI Backtest Lab</Link>
       <h1>Research disclaimer</h1>
       <p>

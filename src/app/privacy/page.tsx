@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = {
-  title: "Privacy",
-  alternates: { canonical: "/privacy/" },
-};
+import { landingIdentity } from "@/lib/landingContent";
+import { privacySeo, pageMetadata } from "@/lib/seo";
+import { StructuredData } from "@/components/StructuredData";
+const identity = landingIdentity();
+export const metadata = pageMetadata(identity, privacySeo);
 export default function Privacy() {
   return (
     <main className="legal-page">
+      <StructuredData identity={identity} page={privacySeo} />
       <Link href="/">← AI Backtest Lab</Link>
       <h1>Privacy notice</h1>
       <p>

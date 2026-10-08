@@ -25,7 +25,7 @@ export function SiteHeader() {
           ai<span>↗</span>
         </span>
         <span>
-          BACKTEST<span className="brand-lab"> LAB</span>
+          Backtest<span className="brand-lab"> Lab</span>
         </span>
       </a>
       <nav className="desktop-nav" aria-label="Primary navigation">
@@ -39,7 +39,7 @@ export function SiteHeader() {
         href="#product"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
-        Explore platform <ArrowUpRight data-icon="inline-end" />
+        Explore workflow <ArrowUpRight data-icon="inline-end" />
       </a>
       <div className="mobile-nav">
         <Sheet open={open} onOpenChange={setOpen}>
