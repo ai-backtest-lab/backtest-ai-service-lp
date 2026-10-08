@@ -37,7 +37,7 @@ for (const path of paths) {
   if (path === "/") {
     assert.equal(
       doc.title,
-      "AI Backtest Lab | Quantitative Backtesting & AI Research Roadmap",
+      "AI Backtest Lab | Quantitative Backtesting & Trading Research",
     );
     for (const email of [
       "founder@aibacktestlab.com",
@@ -49,7 +49,7 @@ for (const path of paths) {
         ),
       );
     const description =
-      "Private quantitative research for historical crypto backtesting. Claude-powered analysis is planned.";
+      "Private quantitative backtesting for trading strategy research: performance, cost and risk analysis. Claude-powered research assistance is planned.";
     for (const selector of [
       'meta[name="description"]',
       'meta[property="og:description"]',
@@ -84,6 +84,14 @@ for (const path of paths) {
 const sitemap = await readFile("out/sitemap.xml", "utf8");
 for (const path of paths) assert.ok(sitemap.includes(domain + path));
 assert.ok(!(await readFile("out/robots.txt", "utf8")).includes("Disallow: /"));
+const headers = await readFile("out/_headers", "utf8");
+assert.match(
+  headers,
+  /\/_next\/static\/\*\n\s+Cache-Control: public, max-age=31536000, immutable/,
+);
+const redirects = await readFile("out/_redirects", "utf8");
+for (const path of ["/privacy", "/disclaimer"])
+  assert.ok(redirects.includes(`${path} ${path}/ 301`), path);
 for (const [size, file] of [
   [16, "public/media/icon-16.png"],
   [32, "public/media/icon-32.png"],

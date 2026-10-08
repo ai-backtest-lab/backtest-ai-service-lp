@@ -36,6 +36,20 @@ Package manager theo `packageManager: pnpm@12.6.0`, dependencies khóa trong loc
 4. Operator đã xác nhận hai mailbox gửi/nhận và trả lời ngày 2026-10-08. Sau deploy kiểm mailto vẫn đúng; landing không triển khai mail provider.
 5. Google Search Console: xác minh domain bằng DNS, submit `https://aibacktestlab.com/sitemap.xml`, dùng URL Inspection sau khi domain phục vụ đúng build. Không đảm bảo thời điểm index/ranking.
 
+## Headers, redirects và indexing
+
+- `public/_headers` được copy vào `out/` và Workers Static Assets áp dụng: `/_next/static/*` (tên file có hash) cache `immutable` 1 năm; mọi response có `X-Content-Type-Options: nosniff` và `Referrer-Policy: strict-origin-when-cross-origin`. HTML, robots, sitemap và `/media/*` giữ cache mặc định `max-age=0, must-revalidate` vì tên file không đổi khi nội dung đổi.
+- `public/_redirects` redirect 301 `/privacy` → `/privacy/` và `/disclaimer` → `/disclaimer/`. Không có file này, `auto-trailing-slash` trả 307 (tạm thời). URL canonical luôn có dấu `/` cuối theo `trailingSlash: true`.
+- Indexing do `siteConfig.release` trong `src/lib/landingContent.ts` quyết định, hiện là `true`. Mọi build từ repo đều indexable. Preview builds phải giữ Disabled; nếu bật lại, cần đưa `release` về cờ phân biệt preview/production trước, nếu không preview URL sẽ indexable.
+
+## Việc cần làm trên Cloudflare Dashboard (repo không quản lý được)
+
+Kiểm production ngày 2026-10-08:
+
+1. **Bắt buộc:** `http://aibacktestlab.com/` trả 200 thay vì redirect. Bật SSL/TLS → Edge Certificates → **Always Use HTTPS**. Sau khi HTTPS ổn định, cân nhắc bật **HSTS** (bắt đầu với max-age ngắn).
+2. **Tùy chọn:** `www.aibacktestlab.com` chưa có DNS. Nếu muốn dùng, thêm DNS record proxied và Redirect Rule 301 `www` → `https://aibacktestlab.com` (giữ path).
+3. Không cần sửa Build/Deploy command hay Preview settings.
+
 ## Kiểm tra local không deploy
 
 ```bash
