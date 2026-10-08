@@ -1,5 +1,42 @@
 import sharp from "sharp";
-import { mkdir } from "node:fs/promises";
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#0d1510"/><path d="M760 630C880 320 940 380 1200 60" stroke="#77dca5" stroke-opacity=".06" stroke-width="190" fill="none"/><rect x="65" y="64" width="56" height="44" rx="8" fill="none" stroke="#354a3d"/><text x="78" y="93" fill="#77dca5" font-family="monospace" font-size="23">ai</text><text x="144" y="94" fill="#e7f1eb" font-family="sans-serif" font-size="23">AI BACKTEST LAB</text><text x="65" y="233" fill="#e7f1eb" font-family="sans-serif" font-size="71" letter-spacing="-3">Backtest with Data.</text><text x="65" y="325" fill="#77dca5" font-family="sans-serif" font-size="71" letter-spacing="-3">Understand with AI.</text><text x="68" y="403" fill="#99afa1" font-family="sans-serif" font-size="23">Quantitative evidence. Clearer research questions.</text><line x1="65" y1="495" x2="1135" y2="495" stroke="#354a3d"/><text x="68" y="540" fill="#77dca5" font-family="monospace" font-size="17">CLAUDE API INTEGRATION PLANNED</text><text x="870" y="540" fill="#99afa1" font-family="monospace" font-size="17">aibacktestlab.com</text></svg>`;
+import { mkdir, writeFile } from "node:fs/promises";
 await mkdir("public/media", { recursive: true });
-await sharp(Buffer.from(svg)).png().toFile("public/media/og.png");
+await sharp("assets/hero-source.png")
+  .resize(1200, 630, { fit: "fill" })
+  .png({ compressionLevel: 9 })
+  .toFile("public/media/og.png");
+await sharp("assets/hero-source.png")
+  .resize(1200, 630, { fit: "fill" })
+  .webp({ quality: 85 })
+  .toFile("public/media/hero-social.webp");
+const icon = (size) =>
+  sharp("assets/brand-source.png")
+    .resize(size, size, { fit: "contain", background: "#090d0b" })
+    .ensureAlpha()
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+for (const size of [16, 32, 48, 180, 192, 512])
+  await writeFile(`public/media/icon-${size}.png`, await icon(size));
+await writeFile("src/app/icon.png", await icon(512));
+await writeFile("src/app/apple-icon.png", await icon(180));
+const sizes = [16, 32, 48];
+const images = await Promise.all(sizes.map(icon));
+const header = Buffer.alloc(6);
+header.writeUInt16LE(1, 2);
+header.writeUInt16LE(sizes.length, 4);
+let offset = 6 + 16 * sizes.length;
+const entries = sizes.map((size, i) => {
+  const entry = Buffer.alloc(16);
+  entry[0] = size;
+  entry[1] = size;
+  entry.writeUInt16LE(1, 4);
+  entry.writeUInt16LE(32, 6);
+  entry.writeUInt32LE(images[i].length, 8);
+  entry.writeUInt32LE(offset, 12);
+  offset += images[i].length;
+  return entry;
+});
+await writeFile(
+  "src/app/favicon.ico",
+  Buffer.concat([header, ...entries, ...images]),
+);

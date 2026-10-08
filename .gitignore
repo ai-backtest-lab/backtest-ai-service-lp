@@ -48,3 +48,5 @@ tmp/
 
 __pycache__/
 *.pyc
+
+.wrangler/

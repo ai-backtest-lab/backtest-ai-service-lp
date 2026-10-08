@@ -39,7 +39,7 @@ export function SiteHeader() {
         href="#product"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
-        Explore platform <ArrowUpRight data-icon="inline-end" />
+        Explore workflow <ArrowUpRight data-icon="inline-end" />
       </a>
       <div className="mobile-nav">
         <Sheet open={open} onOpenChange={setOpen}>

@@ -1,10 +1,8 @@
-.PHONY: setup build release-build dev preview stop status check browser-check
+.PHONY: setup build dev preview stop status check browser-check capture-assets
 setup: ## Install the locked project dependencies
 	pnpm install --frozen-lockfile
-build: ## Build a noindex static preview into out/
+build: ## Build the production-ready static site into out/
 	pnpm build
-release-build: ## Build for indexing; requires verified founder/domain email configuration
-	LANDING_RELEASE=1 pnpm build
 dev: ## Start the owned Next.js dev server on loopback 3220
 	python3 scripts/site.py dev
 preview: ## Serve the already-built static artifact on loopback 3221
@@ -20,3 +18,7 @@ check: ## Run tests, TypeScript and lint without starting a service
 
 browser-check: preview ## Inspect static UI in headed Chrome with actual DevTools
 	node scripts/browser-check.mjs
+
+capture-assets: preview ## Refresh hero and brand screenshots from the current static build
+	node scripts/capture-assets.mjs
+	node scripts/assets.mjs

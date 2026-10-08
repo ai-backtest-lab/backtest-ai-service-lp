@@ -13,7 +13,10 @@ export function WorkflowStory() {
               </span>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
-              <Badge variant={i < 3 ? "outline" : "secondary"}>
+              <Badge
+                variant={i < 3 ? "outline" : "secondary"}
+                className="max-w-full whitespace-normal"
+              >
                 {step.status}
               </Badge>
             </div>

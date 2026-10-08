@@ -35,18 +35,25 @@ describe("truthful standalone landing", () => {
         .some((a) => a.getAttribute("href")?.startsWith("/api")),
     ).toBe(false);
     expect(screen.queryByRole("link", { name: "Open dashboard" })).toBeNull();
-    expect(screen.queryByRole("link", { name: /founder@/ })).toBeNull();
+    expect(screen.getByRole("link", { name: /founder@/ })).toHaveAttribute(
+      "href",
+      "mailto:founder@aibacktestlab.com",
+    );
   });
-  it("only renders contact when explicitly configured", () => {
-    render(
-      <LandingPage
-        identity={landingIdentity({
-          LANDING_CONTACT_EMAIL: "founder@aibacktestlab.com",
-        })}
-      />,
+  it("provides founder and support actions without a contact form or extra section", () => {
+    const { container } = render(<LandingPage identity={landingIdentity()} />);
+    expect(screen.getByRole("link", { name: "Contact us" })).toHaveAttribute(
+      "href",
+      expect.stringContaining("mailto:founder@aibacktestlab.com"),
+    );
+    expect(screen.getByRole("link", { name: "Get support" })).toHaveAttribute(
+      "href",
+      expect.stringContaining("mailto:support@aibacktestlab.com"),
     );
     expect(
-      screen.getByRole("link", { name: /founder@aibacktestlab.com/ }),
-    ).toHaveAttribute("href", expect.stringContaining("mailto:"));
+      screen.getByRole("link", { name: /support@aibacktestlab.com/ }),
+    ).toHaveAttribute("href", "mailto:support@aibacktestlab.com");
+    expect(container.querySelectorAll("main > section")).toHaveLength(10);
+    expect(container.querySelector("form")).toBeNull();
   });
 });

@@ -1,0 +1,30 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "title": "AI Backtest Lab | Quantitative Backtesting & AI Research Roadmap",
+      "canonical": "https://aibacktestlab.com/",
+      "status": "PASS"
+    },
+    {
+      "path": "/privacy/",
+      "title": "Privacy Notice | AI Backtest Lab",
+      "canonical": "https://aibacktestlab.com/privacy/",
+      "status": "PASS"
+    },
+    {
+      "path": "/disclaimer/",
+      "title": "Research Disclaimer | AI Backtest Lab",
+      "canonical": "https://aibacktestlab.com/disclaimer/",
+      "status": "PASS"
+    }
+  ],
+  "indexable": true,
+  "sitemap": true,
+  "robots": true,
+  "socialImage": {
+    "width": 1200,
+    "height": 630
+  },
+  "icons": true
+}

@@ -2,35 +2,21 @@ export interface LandingIdentity {
   brand: string;
   domain: string;
   founder: string | null;
-  email: string | null;
+  email: string;
+  supportEmail: string;
   release: boolean;
 }
-export function landingIdentity(
-  env: Record<string, string | undefined> = {},
-): LandingIdentity {
-  const release = env.LANDING_RELEASE === "1";
-  const brand = "AI Backtest Lab";
-  const domain = env.LANDING_DOMAIN?.trim() || "https://aibacktestlab.com";
-  const founder = env.LANDING_FOUNDER?.trim() || null;
-  const email = env.LANDING_CONTACT_EMAIL?.trim() || null;
-  const parsed = new URL(domain);
-  if (
-    parsed.protocol !== "https:" ||
-    parsed.pathname !== "/" ||
-    parsed.search ||
-    parsed.hash
-  )
-    throw new Error("Landing domain must be an HTTPS origin");
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-    throw new Error("Invalid contact email");
-  if (
-    release &&
-    (!founder || !email || email.split("@")[1] !== parsed.hostname)
-  )
-    throw new Error(
-      "Release requires a verified founder and domain-matching contact email",
-    );
-  return { brand, domain: parsed.origin, founder, email, release };
+// Public website information; no runtime configuration or credentials are needed.
+export const siteConfig: LandingIdentity = {
+  brand: "AI Backtest Lab",
+  domain: "https://aibacktestlab.com",
+  founder: null,
+  email: "founder@aibacktestlab.com",
+  supportEmail: "support@aibacktestlab.com",
+  release: true,
+};
+export function landingIdentity(): LandingIdentity {
+  return siteConfig;
 }
 export const heroLines = [
   "Build the hypothesis.",
@@ -43,24 +29,24 @@ export const workflow = [
     number: "01",
     title: "Define strategy",
     body: "Pick a strategy, parameters, symbol and historical window.",
-    status: "Private workspace",
+    status: "Private workspace · not publicly available",
   },
   {
     number: "02",
     title: "Run backtest",
     body: "Execute a historical simulation with explicit data and cost assumptions.",
-    status: "Private workspace",
+    status: "Private workspace · not publicly available",
   },
   {
     number: "03",
     title: "Measure results",
     body: "Inspect recorded outcomes, drawdowns, costs and individual trades.",
-    status: "Private workspace",
+    status: "Private workspace · not publicly available",
   },
   {
     number: "04",
     title: "Analyze with Claude",
-    body: "Translate a validated report into explanations of risk and limitations.",
+    body: "Planned: send structured metrics, costs and assumptions to Claude for risk interpretation and explanations.",
     status: "Planned Claude integration",
   },
   {
@@ -72,7 +58,7 @@ export const workflow = [
   {
     number: "06",
     title: "Validate again",
-    body: "Run the next experiment and compare the evidence, including out-of-sample checks.",
+    body: "Use the quantitative engine to test follow-up hypotheses. Broader out-of-sample validation is planned.",
     status: "Planned research workflow",
   },
 ] as const;
@@ -80,8 +66,8 @@ export const roadmap = [
   {
     date: "Q4 2026 — Q1 2027",
     title: "Backtesting core & Claude POC",
-    body: "Auditable strategy results, transparent assumptions and our first grounded Claude research reports.",
-    status: "In progress / AI planned",
+    body: "Continue hardening auditable research evidence and define the first grounded Claude proof of concept.",
+    status: "Private backtest core exists · Claude POC planned",
   },
   {
     date: "Q2 — Q3 2027",
@@ -113,7 +99,7 @@ export const faq = [
   ],
   [
     "Which markets can I backtest?",
-    "Historical backtesting currently focuses on crypto. Vietnam equity research has preview and strategy workspaces; source-backed execution remains in development. Other market views provide informational context.",
+    "Historical crypto backtesting exists in the private workspace. Vietnam equity research is an internal preview. Source-backed backtesting and execution are not available. Other market views provide informational context.",
   ],
   [
     "Is the platform publicly available?",

@@ -1,13 +1,6 @@
-import type { MetadataRoute } from "next";
 import { landingIdentity } from "@/lib/landingContent";
+import { seoRobots } from "@/lib/seo";
 export const dynamic = "force-static";
-export default function robots(): MetadataRoute.Robots {
-  const identity = landingIdentity(process.env);
-  return {
-    rules: {
-      userAgent: "*",
-      ...(identity.release ? { allow: "/" } : { disallow: "/" }),
-    },
-    ...(identity.release ? { sitemap: `${identity.domain}/sitemap.xml` } : {}),
-  };
+export default function robots() {
+  return seoRobots(landingIdentity());
 }
