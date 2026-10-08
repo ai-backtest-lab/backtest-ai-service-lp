@@ -8,9 +8,9 @@ export interface SeoPage {
 }
 export const homeSeo: SeoPage = {
   path: "/",
-  title: "Quantitative Backtesting & AI Research Roadmap",
+  title: "Quantitative Backtesting & Trading Research",
   description:
-    "Private quantitative research for historical crypto backtesting. Claude-powered analysis is planned.",
+    "Private quantitative backtesting for trading strategy research: performance, cost and risk analysis. Claude-powered research assistance is planned.",
 };
 export const privacySeo: SeoPage = {
   path: "/privacy/",
