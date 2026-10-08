@@ -1,0 +1,66 @@
+{
+  "started": "2026-10-08T06:38:37.448Z",
+  "headed": true,
+  "scenarios": [
+    {
+      "width": 1440,
+      "status": "PASS",
+      "pin": true,
+      "mobileMenu": false,
+      "faq": true
+    },
+    {
+      "width": 1024,
+      "status": "PASS",
+      "pin": true,
+      "mobileMenu": false,
+      "faq": true
+    },
+    {
+      "width": 390,
+      "status": "PASS",
+      "pin": false,
+      "mobileMenu": true,
+      "faq": true
+    },
+    {
+      "width": 375,
+      "status": "PASS",
+      "pin": false,
+      "mobileMenu": true,
+      "faq": true
+    },
+    {
+      "reducedMotion": true,
+      "status": "PASS"
+    },
+    {
+      "javaScriptDisabled": true,
+      "status": "PASS"
+    },
+    {
+      "webglContextLossAndRestoration": true,
+      "runtimeReducedMotion": true,
+      "status": "PASS"
+    },
+    {
+      "webglUnavailable": true,
+      "status": "PASS"
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "externalRequests": [],
+  "privateRequests": [],
+  "devtools": [
+    {
+      "title": "DevTools - 127.0.0.1:3221/#product",
+      "url": "devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@3ff7ac5a9224be9156d7f8703a06e22890aafd34/&targetType=tab&can_dock=true&disableSelfXssWarnings=true",
+      "Console": true,
+      "Network": true,
+      "page": "http://127.0.0.1:3221/#product"
+    }
+  ],
+  "boundary404": true,
+  "finished": "2026-10-08T06:39:23.701Z"
+}

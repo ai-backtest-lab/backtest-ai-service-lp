@@ -1,0 +1,52 @@
+import { render, screen, cleanup } from "@testing-library/react";
+import { afterEach, describe, it, expect, vi } from "vitest";
+import { LandingPage } from "./LandingPage";
+import { landingIdentity } from "@/lib/landingContent";
+vi.mock("./LandingMotion", () => ({
+  LandingMotion: ({ children }: { children: React.ReactNode }) => (
+    <div>{children}</div>
+  ),
+}));
+vi.mock("./WorkflowStory", () => ({
+  WorkflowStory: () => <div>Workflow chapters</div>,
+}));
+vi.mock("./ClaudeStory", () => ({
+  ClaudeStory: () => <div>Planned Claude report concept</div>,
+}));
+vi.mock("./HeroAtmosphere", () => ({ HeroAtmosphere: () => null }));
+vi.mock("./effects/MaskedHeading", () => ({
+  default: ({ text }: { text: string }) => <h2>{text}</h2>,
+}));
+afterEach(cleanup);
+describe("truthful standalone landing", () => {
+  it("renders the brand, planned AI and meaningful CTA without a trading endpoint", () => {
+    render(<LandingPage identity={landingIdentity()} />);
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
+      "Backtest with Data.",
+    );
+    expect(
+      screen.getByText(
+        "Claude API integration is planned and is not yet available in the current product.",
+      ),
+    ).toBeVisible();
+    expect(
+      screen
+        .getAllByRole("link")
+        .some((a) => a.getAttribute("href")?.startsWith("/api")),
+    ).toBe(false);
+    expect(screen.queryByRole("link", { name: "Open dashboard" })).toBeNull();
+    expect(screen.queryByRole("link", { name: /founder@/ })).toBeNull();
+  });
+  it("only renders contact when explicitly configured", () => {
+    render(
+      <LandingPage
+        identity={landingIdentity({
+          LANDING_CONTACT_EMAIL: "founder@aibacktestlab.com",
+        })}
+      />,
+    );
+    expect(
+      screen.getByRole("link", { name: /founder@aibacktestlab.com/ }),
+    ).toHaveAttribute("href", expect.stringContaining("mailto:"));
+  });
+});

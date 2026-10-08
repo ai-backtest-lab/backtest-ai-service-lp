@@ -1,0 +1,33 @@
+---
+status: current
+last_verified: 2026-10-08
+code: src/app/, src/components/landing/, src/lib/landingContent.ts, next.config.ts, Makefile
+---
+
+# AI Backtest Lab — thiết kế source landing riêng
+
+Operator ngày 2026-10-08 yêu cầu clone `git@github.com.per:DyanNguyen22/backtest-ai-service-lp.git` vào folder cạnh backtest-service, init Next.js và triển khai ở đây. Quyết định này thay phần root/dashboard migration của proposal cũ. Không copy API proxy, service, database hoặc trading controls từ app nghiên cứu sang landing. Source app cũ giữ nguyên; WIP trước khi đổi source được giữ ở stash `914f748b` của app cũ.
+
+Brand và copy theo [tài liệu operator](brand-roadmap.md): AI Backtest Lab, aibacktestlab.com, workflow Build → Backtest → Quantify → Explain with Claude → Hypothesis → Validate again. Domain là định danh dự kiến, không phải bằng chứng DNS/email đã hoạt động. POC Claude và public launch chưa diễn ra.
+
+## Bố cục và motion
+
+Mười sections: Hero, Problem, Six-step workflow, Capabilities, Claude AI, Validation, Architecture, Roadmap, About, Contact/FAQ. Hero dùng Plasma trên dark/green semantic tokens; headline ổn định đọc được từ HTML, TextType dùng ở dòng phụ. Product và Claude có hai pinned stages desktop; mobile/viewport thấp/reduced motion dùng narrative linear. ScrollReveal dùng cho statement, MaskedHeading cho Validation, GSAP reveal nhẹ cho các section khác.
+
+Product navigation giữ chapter bằng scroll; nút chapter dùng instant scroll để tránh việc smooth-scroll đi qua chapter giữa và hiển thị sai state. Nội dung Report là concept minh họa, không giả response API Claude. Chart là illustration không có performance metrics. Nhãn Planned/Illustrative hiện ở ngay visual và hero, không có testimonials, client counts hay giả lợi nhuận.
+
+Pin/tweens scoped; route departure và breakpoint/reduced-motion changes revert đúng owner. Hero WebGL dừng khi offscreen/hidden tab; lỗi context dùng CSS fallback, không tiếp tục render bằng GPU resources đã invalidated. TextType và MaskedHeading có cleanup timer/tween/RAF; masked text có DOM fallback đọc được khi media/JS lỗi.
+
+## Public boundary và trạng thái sản phẩm
+
+Next.js App Router/TypeScript/Tailwind/shadcn, static export `out/`. Routes chỉ `/`, `/privacy/`, `/disclaimer/`, robots/sitemap/icon. Không dashboard hoặc `/api` trong artifact, không gọi trading app/Claude API, không auth/registration/waitlist backend. Không có secret trong source hay client bundle.
+
+Historical crypto research và market views là capability của private product hiện có, không phải feature runtime của site landing này. VN execution còn blocked và được nói rõ trong copy. Demo có private infrastructure; roadmap mô tả mở rộng validation/access, không phủ nhận service cũ đã tồn tại. Real vẫn frozen ở app cũ; roadmap không authorizes tiếp tục hoặc pilot.
+
+Mặc định preview noindex. Release build yêu cầu founder thật và email cùng domain qua environment; guard kiểm định dạng/consistency, **không chứng minh mailbox delivery hoặc domain ownership**. Operator phải kiểm các prerequisite đó trước public launch. Không auto-deploy hay gửi application.
+
+## React Bits và bằng chứng
+
+Bốn bản TS-CSS lấy qua shadcn registry chính thức, sau đó adapt lifecycle/type/accessibility. [Provenance hashes](react-bits-provenance.json), [license](REACT_BITS_LICENSE.md) giữ nguồn/điều kiện; không bán lại component library. Không cần runtime package React Bits hoặc thêm smooth-scroll library.
+
+Make targets setup/build/release-build/dev/preview/stop/status/check. Native dev loopback3220, static preview loopback3221; lifecycle guard exact repo/PID start-time, không chiếm process trên port đã bận. Build tạo gzip sidecars; local preview phục vụ content encoding/cache headers tương tự static hosting để đo performance lab có ý nghĩa. H1 không fade sau hydration để tránh reset mốc LCP.

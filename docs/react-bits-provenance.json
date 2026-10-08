@@ -1,0 +1,50 @@
+[
+  {
+    "component": "Plasma",
+    "registry": "https://reactbits.dev/r/Plasma-TS-CSS.json",
+    "file": "Plasma.tsx",
+    "upstream_sha256": "2c2fb8a482d2e57b12edb4f62056555d677eec124eefedd0381dc117d5068b8c"
+  },
+  {
+    "component": "Plasma",
+    "registry": "https://reactbits.dev/r/Plasma-TS-CSS.json",
+    "file": "Plasma.css",
+    "upstream_sha256": "baa8d4161067b0ec491ef6e9dc081ac1284a15c35a837fa478dcfb929b66d89d"
+  },
+  {
+    "component": "ScrollReveal",
+    "registry": "https://reactbits.dev/r/ScrollReveal-TS-CSS.json",
+    "file": "ScrollReveal.tsx",
+    "upstream_sha256": "67110ae5a6254ba1b1c9dd92fb745773ca2fa50ab45e38ef3a6dd6b2ce90dd62"
+  },
+  {
+    "component": "ScrollReveal",
+    "registry": "https://reactbits.dev/r/ScrollReveal-TS-CSS.json",
+    "file": "ScrollReveal.css",
+    "upstream_sha256": "b16de51475c3214ba7c11dc7a8c42f4ccd8436701b3e5d60c01489a663f05938"
+  },
+  {
+    "component": "TextType",
+    "registry": "https://reactbits.dev/r/TextType-TS-CSS.json",
+    "file": "TextType.tsx",
+    "upstream_sha256": "586e186be78caa52573f78e25364eb92c9646f2b4a76b9550048ce346f9b9677"
+  },
+  {
+    "component": "TextType",
+    "registry": "https://reactbits.dev/r/TextType-TS-CSS.json",
+    "file": "TextType.css",
+    "upstream_sha256": "f4491de7244b3e3fc81cf2de535e806f372379ac25e2960837126eb100e6c653"
+  },
+  {
+    "component": "MaskedHeading",
+    "registry": "https://reactbits.dev/r/MaskedHeading-TS-CSS.json",
+    "file": "MaskedHeading.tsx",
+    "upstream_sha256": "4fa37aefa8b7b81da50346dd4f3f3113b40ed7b290fcbb379e1de82c880c976e"
+  },
+  {
+    "component": "MaskedHeading",
+    "registry": "https://reactbits.dev/r/MaskedHeading-TS-CSS.json",
+    "file": "MaskedHeading.css",
+    "upstream_sha256": "50fa110a5d7afea828e7b4fa5df49affd8b24c7b012e54fd4d8768ccd0d3ddd1"
+  }
+]

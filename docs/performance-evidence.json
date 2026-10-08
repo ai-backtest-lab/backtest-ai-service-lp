@@ -1,0 +1,36 @@
+{
+  "source": "Lighthouse static preview, simulated mobile throttling",
+  "url": "http://127.0.0.1:3221/",
+  "fetchTime": "2026-10-08T06:32:34.261Z",
+  "lighthouseVersion": "13.5.0",
+  "throttling": {
+    "rttMs": 150,
+    "throughputKbps": 1638.4,
+    "requestLatencyMs": 562.5,
+    "downloadThroughputKbps": 1474.5600000000002,
+    "uploadThroughputKbps": 675,
+    "cpuSlowdownMultiplier": 4
+  },
+  "categories": {
+    "performance": 0.97,
+    "accessibility": 1
+  },
+  "metrics": {
+    "largest-contentful-paint": {
+      "value": 2403.3774,
+      "display": "2.4\u00a0s"
+    },
+    "cumulative-layout-shift": {
+      "value": 0.00010482619286690738,
+      "display": "0"
+    },
+    "total-blocking-time": {
+      "value": 66.5,
+      "display": "70\u00a0ms"
+    },
+    "first-contentful-paint": {
+      "value": 1202.53305,
+      "display": "1.2\u00a0s"
+    }
+  }
+}
