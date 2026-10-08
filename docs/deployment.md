@@ -12,7 +12,7 @@ Site là Next.js16 static export. Build tạo `out/`; Wrangler chỉ upload asse
 
 | Setting | Giá trị |
 |---|---|
-| Repository | `DyanNguyen22/backtest-ai-service-lp` |
+| Repository | `ai-backtest-lab/backtest-ai-service-lp` |
 | Project/Worker name | `backtest-ai-service-lp` |
 | Production branch | `main` |
 | Root directory | `/` |
