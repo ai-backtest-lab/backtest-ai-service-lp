@@ -25,7 +25,7 @@ describe("production SEO contract", () => {
     }
     expect(pageMetadata(identity, homeSeo).title).toEqual({
       absolute:
-        "AI Backtest Lab | Quantitative Backtesting & AI Research Roadmap",
+        "AI Backtest Lab | Quantitative Backtesting & Trading Research",
     });
   });
   it("enables production indexing and lists only exported pages", () => {

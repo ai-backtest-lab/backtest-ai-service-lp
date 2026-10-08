@@ -398,7 +398,7 @@ Bổ sung này cập nhật copy/status được dùng trên landing; giữ nguy
 - Claude: Planned, POC chưa được trình bày như đã có. Input dự kiến gồm metrics, trade summaries, parameters, coverage và cost assumptions; output là giải thích drawdown/risk, limitations và hypotheses. Engine sở hữu calculations và quantitative validation; Claude không đặt lệnh hoặc hứa dự đoán returns.
 - Roadmap phase 1: `Private backtest core exists · Claude POC planned`; phase 2 thêm out-of-sample và sandbox forward-validation Planned; phase 3 research Q&A/experiment comparisons Planned; phase 4 beta/early access Planned. Mốc là mục tiêu, có thể đổi theo bằng chứng.
 - About: independent research startup phục vụ independent researchers, crypto strategy developers và systematic traders; differentiation là inspectable evidence cùng planned interpretation, không phải lợi nhuận tự động.
-- Metadata: `AI Backtest Lab | Quantitative Backtesting & AI Research Roadmap`; description `Private quantitative research for historical crypto backtesting. Claude-powered analysis is planned.` áp dụng HTML, Open Graph và Twitter.
+- Metadata: `AI Backtest Lab | Quantitative Backtesting & Trading Research`; description `Private quantitative backtesting for trading strategy research: performance, cost and risk analysis. Claude-powered research assistance is planned.` áp dụng HTML, Open Graph và Twitter.
 - Contact: founder@aibacktestlab.com và support@aibacktestlab.com. Operator xác nhận gửi/nhận và trả lời ngày 2026-10-08; UI, mailto và JSON-LD dùng cùng địa chỉ.
 - Giữ layout/dark theme/animations; typography uppercase là thay đổi thiết kế riêng, không trộn vào vòng claim review này.
 
