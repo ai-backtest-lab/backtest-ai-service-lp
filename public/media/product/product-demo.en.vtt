@@ -1,0 +1,49 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.500
+The Research Lab runs the real backtesting engine, here on synthetic market data.
+
+2
+00:00:03.500 --> 00:00:08.490
+Choose a strategy, a pair, an interval and a range.
+
+3
+00:00:08.490 --> 00:00:13.743
+Set parameters. Fees, slippage, capital and risk follow one explicit policy.
+
+4
+00:00:13.743 --> 00:00:18.414
+Run a historical backtest. Each run is isolated in its own container.
+
+5
+00:00:18.414 --> 00:00:24.781
+The quality check reads return after costs, drawdown, profit factor and sample size.
+
+6
+00:00:24.781 --> 00:00:31.017
+Performance after fees, slippage and funding, with buy and hold as a reference.
+
+7
+00:00:31.017 --> 00:00:38.292
+Candles and trades exactly as the run saw them.
+
+8
+00:00:38.292 --> 00:00:46.859
+The equity curve and every closed trade.
+
+9
+00:00:46.859 --> 00:00:53.013
+Test a second parameter variant on the same data.
+
+10
+00:00:53.013 --> 00:01:04.443
+Compare variants: return, drawdown, profit factor and equity, side by side.
+
+11
+00:01:04.443 --> 00:01:13.394
+The newest 12 months stay held out for a separate recent-period check.
+
+12
+00:01:13.394 --> 00:01:16.396
+AI Backtest Lab · aibacktestlab.com

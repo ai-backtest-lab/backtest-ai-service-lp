@@ -1,0 +1,149 @@
+{
+  "label": "Real Backtesting Engine · Synthetic Market Data",
+  "dataset": "synthetic",
+  "datasetNote": "Captured from the private Research Lab running its real backtesting engine on a seeded synthetic market (SYNTHETIC-TREND.P). No exchange data appears in any image or video.",
+  "captured": "2026-10-11",
+  "product": {
+    "repository": "backtest-service (private)",
+    "commit": "36268082",
+    "uncommittedChanges": true
+  },
+  "rightsConfirmed": false,
+  "screenshots": [
+    {
+      "id": "dashboard-overview",
+      "title": "Research run",
+      "alt": "AI Backtest Lab Research Lab: the run form for a Donchian breakout strategy on a synthetic 4h market, and the automated quality check of the finished run showing return after costs, max drawdown, profit factor and number of trades.",
+      "caption": "A finished quick-check run. The quality check reads return after costs, drawdown, profit factor and sample size in plain words.",
+      "files": [
+        {
+          "width": 1280,
+          "height": 697,
+          "bytes": 34778
+        },
+        {
+          "width": 2400,
+          "height": 1307,
+          "bytes": 82870
+        }
+      ]
+    },
+    {
+      "id": "strategy-research",
+      "title": "Strategy research",
+      "alt": "Research Lab run form: strategy file, pair, interval and range preset, strategy parameters, and the fee, slippage, starting capital, risk and leverage policy applied to every run.",
+      "caption": "Configure a strategy: file, pair, interval, range and parameters. Fees, slippage, capital and risk are fixed by one explicit policy.",
+      "files": [
+        {
+          "width": 1280,
+          "height": 574,
+          "bytes": 25710
+        },
+        {
+          "width": 2400,
+          "height": 1077,
+          "bytes": 59580
+        }
+      ]
+    },
+    {
+      "id": "backtest-results",
+      "title": "Backtest results",
+      "alt": "Research Lab results: performance after fees, slippage and funding with a buy-and-hold reference, and a candlestick chart with the run's entries and exits.",
+      "caption": "Results after fees, slippage and funding, with buy and hold as a reference, and the candles and trades exactly as the run saw them.",
+      "files": [
+        {
+          "width": 1280,
+          "height": 871,
+          "bytes": 50364
+        },
+        {
+          "width": 2400,
+          "height": 1634,
+          "bytes": 104690
+        }
+      ]
+    },
+    {
+      "id": "risk-analysis",
+      "title": "Performance & risk analysis",
+      "alt": "Research Lab comparison of two parameter variants on the same synthetic data: return, drawdown, profit factor, trade count and both equity curves.",
+      "caption": "Compare variants on the same data: return, drawdown, profit factor, trades and equity curves side by side.",
+      "files": [
+        {
+          "width": 1280,
+          "height": 463,
+          "bytes": 32066
+        },
+        {
+          "width": 2400,
+          "height": 868,
+          "bytes": 67492
+        }
+      ]
+    }
+  ],
+  "video": {
+    "id": "product-demo",
+    "title": "Working local product demonstration",
+    "description": "One uncut recording of the private Research Lab: configure a strategy, run two real backtests on synthetic market data, read the quality check, performance, chart and trades, then compare the variants.",
+    "durationSeconds": 76,
+    "width": 1280,
+    "height": 636,
+    "files": {
+      "mp4": 1385186,
+      "webm": 1402356,
+      "poster": 37412
+    },
+    "transcript": [
+      {
+        "at": 0,
+        "text": "The Research Lab runs the real backtesting engine, here on synthetic market data."
+      },
+      {
+        "at": 4,
+        "text": "Choose a strategy, a pair, an interval and a range."
+      },
+      {
+        "at": 8,
+        "text": "Set parameters. Fees, slippage, capital and risk follow one explicit policy."
+      },
+      {
+        "at": 14,
+        "text": "Run a historical backtest. Each run is isolated in its own container."
+      },
+      {
+        "at": 18,
+        "text": "The quality check reads return after costs, drawdown, profit factor and sample size."
+      },
+      {
+        "at": 25,
+        "text": "Performance after fees, slippage and funding, with buy and hold as a reference."
+      },
+      {
+        "at": 31,
+        "text": "Candles and trades exactly as the run saw them."
+      },
+      {
+        "at": 38,
+        "text": "The equity curve and every closed trade."
+      },
+      {
+        "at": 47,
+        "text": "Test a second parameter variant on the same data."
+      },
+      {
+        "at": 53,
+        "text": "Compare variants: return, drawdown, profit factor and equity, side by side."
+      },
+      {
+        "at": 64,
+        "text": "The newest 12 months stay held out for a separate recent-period check."
+      },
+      {
+        "at": 73,
+        "text": "AI Backtest Lab · aibacktestlab.com"
+      }
+    ]
+  }
+}
