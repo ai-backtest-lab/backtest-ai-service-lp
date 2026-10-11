@@ -1,0 +1,10 @@
+{
+  "_note": "Founder decisions for the legal pages. null = not decided yet: production omits the related sentence and `pnpm release:check` fails. See docs/founder-decisions.md.",
+  "operatorName": "Nguyen Thanh Dat",
+  "operatorDescription": "an individual based in Vietnam",
+  "governingLaw": null,
+  "disputeVenue": null,
+  "contactEmailRetention": null,
+  "minimumAge": null,
+  "legalTextApproved": false
+}

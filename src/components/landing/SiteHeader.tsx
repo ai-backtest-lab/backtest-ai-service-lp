@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, ArrowUpRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -11,24 +12,25 @@ import {
 } from "@/components/ui/sheet";
 import { demoUrl } from "@/lib/landingContent";
 const links = [
-  ["Platform", "#product"],
-  ["Claude AI", "#claude-ai"],
-  ["Architecture", "#architecture"],
-  ["Roadmap", "#roadmap"],
-  ["About", "#about"],
+  ["Platform", "/#product"],
+  ["Claude AI", "/#claude-ai"],
+  ["Architecture", "/#architecture"],
+  ["Roadmap", "/#roadmap"],
+  ["About", "/#about"],
+  ["Product", "/product/"],
 ];
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="AI Backtest Lab home">
+      <Link className="brand" href="/#top" aria-label="AI Backtest Lab home">
         <span className="brand-symbol">
           ai<span>↗</span>
         </span>
         <span>
           Backtest<span className="brand-lab"> Lab</span>
         </span>
-      </a>
+      </Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
         {links.map(([label, href]) => (
           <a key={href} href={href}>

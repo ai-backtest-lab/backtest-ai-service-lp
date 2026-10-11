@@ -17,20 +17,36 @@ export const homeSeo: SeoPage = {
   description:
     "Backtest trading strategies, understand performance and risk, and research with evidence. Quantitative research for individuals and teams; AI insights are planned.",
 };
+export const productSeo: SeoPage = {
+  path: "/product/",
+  title: "Product: Research Lab, Screenshots & Demo",
+  description:
+    "See the AI Backtest Lab Research Lab as it runs today: real screenshots and an uncut product video on synthetic market data, architecture, status and limits.",
+  modified: "2026-10-11",
+};
 export const privacySeo: SeoPage = {
   path: "/privacy/",
   title: "Privacy Notice",
   description:
-    "Read how the AI Backtest Lab public site handles local assets, optional contact email and its planned Claude API integration.",
+    "How the AI Backtest Lab website and interactive demo handle request data through Cloudflare, contact email and your choices. No cookies, analytics or trackers.",
+  modified: "2026-10-11",
+};
+export const termsSeo: SeoPage = {
+  path: "/terms/",
+  title: "Terms of Use",
+  description:
+    "Terms for using the AI Backtest Lab website and public interactive demo: acceptable use, content ownership, no financial advice and limits of liability.",
+  modified: "2026-10-11",
 };
 export const disclaimerSeo: SeoPage = {
   path: "/disclaimer/",
   title: "Research Disclaimer",
   description:
-    "Understand the limits of historical backtesting, illustrative research views and the planned Claude analysis layer at AI Backtest Lab.",
+    "Limits of historical backtesting, synthetic product media, the static demo and the planned Claude analysis layer at AI Backtest Lab.",
+  modified: "2026-10-11",
 };
 export function publicSeoPages(): SeoPage[] {
-  return [homeSeo, privacySeo, disclaimerSeo];
+  return [homeSeo, productSeo, privacySeo, termsSeo, disclaimerSeo];
 }
 export function pageMetadata(
   identity: LandingIdentity,

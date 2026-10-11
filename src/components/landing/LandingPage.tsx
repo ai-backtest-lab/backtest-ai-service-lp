@@ -30,8 +30,11 @@ import {
   type LandingIdentity,
 } from "@/lib/landingContent";
 import { SiteHeader } from "./SiteHeader";
+import { SiteFooter } from "./SiteFooter";
 import { HeroAtmosphere } from "./HeroAtmosphere";
-import { ResearchPreview } from "./ResearchPreview";
+import { ProductShot } from "@/components/product/ProductShot";
+import { ProductVideo } from "@/components/product/ProductVideo";
+import { mediaLabel } from "@/lib/media";
 import { WorkflowStory } from "./WorkflowStory";
 import { ClaudeStory } from "./ClaudeStory";
 import { LandingMotion } from "./LandingMotion";
@@ -96,8 +99,8 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
                   Explore Interactive Demo{" "}
                   <ArrowUpRight data-icon="inline-end" />
                 </a>
-                <a href="#audience" className="text-link">
-                  Individuals & teams <ArrowRight />
+                <a href="#see-it-in-action" className="text-link">
+                  Watch Product Demo <ArrowRight />
                 </a>
               </div>
               <p data-hero-copy className="hero-status">
@@ -116,24 +119,20 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </div>
             <div className="hero-visual" data-hero-copy>
               <div className="hero-visual-label mono">
-                <span>AI Backtest Lab / Research loop</span>
-                <span>01 — 06</span>
+                <span>AI Backtest Lab / Research Lab</span>
+                <span>Real screenshot</span>
               </div>
-              <ResearchPreview />
-              <div className="hero-insight">
-                <div>
-                  <span className="insight-symbol">✳</span>
-                  <span className="mono">Claude insights</span>
-                  <Badge variant="outline">Concept · Planned</Badge>
-                </div>
-                <p>
-                  Not just “how did it perform?”
-                  <br />
-                  <strong>What should you test next?</strong>
-                </p>
+              <div className="hero-shot">
+                <ProductShot
+                  id="dashboard-overview"
+                  priority
+                  sizes="(max-width: 1023px) 100vw, 55vw"
+                  showCaption={false}
+                />
               </div>
               <p className="visual-caption">
-                Illustrative research view · No measured performance shown
+                {mediaLabel} · private Research Lab ·{" "}
+                <a href="/product/">See the product</a>
               </p>
             </div>
           </div>
@@ -244,6 +243,27 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </p>
           </div>
           <WorkflowStory />
+          <div
+            id="see-it-in-action"
+            className="see-it-in-action"
+            aria-labelledby="see-it-in-action-title"
+            data-reveal
+          >
+            <div className="see-it-copy">
+              <span className="eyebrow">Working Local Product Demonstration</span>
+              <h3 id="see-it-in-action-title">See it in action.</h3>
+              <p>
+                One uncut recording of the private Research Lab: configure a
+                strategy, run two real backtests, read the quality check,
+                performance, chart and trades, then compare the variants. The
+                engine is real; the market data is synthetic.
+              </p>
+              <a href="/product/#workflow" className="text-link">
+                Read the transcript <ArrowRight />
+              </a>
+            </div>
+            <ProductVideo />
+          </div>
         </section>
         <section
           id="capabilities"
@@ -265,6 +285,11 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
               Calculations stay in the engine. Strategy assumptions and recorded
               outcomes remain inspectable in the research workspace.
             </p>
+          </div>
+          <div className="evidence-grid">
+            <ProductShot id="backtest-results" />
+            <ProductShot id="strategy-research" />
+            <ProductShot id="risk-analysis" />
           </div>
           <div className="capability-grid">
             {capabilities.map(([title, body, status, Icon]) => (
@@ -593,35 +618,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           </div>
         </section>
       </main>
-      <footer className="site-footer section-shell">
-        <a className="brand" href="#top">
-          <span className="brand-symbol">
-            ai<span>↗</span>
-          </span>
-          <span>AI Backtest Lab</span>
-        </a>
-        <p>Private quantitative research. Claude analysis planned.</p>
-        <div className="footer-contact">
-          <a href={`mailto:${identity.email}`}>
-            <span>Founder</span>
-            {identity.email}
-          </a>
-          <a href={`mailto:${identity.supportEmail}`}>
-            <span>Support</span>
-            {identity.supportEmail}
-          </a>
-        </div>
-        <nav aria-label="Legal navigation">
-          <a href={demoUrl}>Interactive demo</a>
-          <a href={githubOrgUrl}>GitHub organization</a>
-          <a href={founderGithubUrl}>Founder GitHub</a>
-          <a href={demoRepoUrl}>Demo source</a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/disclaimer/">Research disclaimer</a>
-          <a href="/media/react-bits-license.txt">Component notices</a>
-          <span>© 2026 AI Backtest Lab</span>
-        </nav>
-      </footer>
+      <SiteFooter identity={identity} />
     </LandingMotion>
   );
 }

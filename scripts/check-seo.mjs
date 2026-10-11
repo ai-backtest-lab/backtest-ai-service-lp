@@ -3,7 +3,7 @@ import { JSDOM } from "jsdom";
 import sharp from "sharp";
 import assert from "node:assert/strict";
 const domain = "https://aibacktestlab.com";
-const paths = ["/", "/privacy/", "/disclaimer/"];
+const paths = ["/", "/product/", "/privacy/", "/terms/", "/disclaimer/"];
 const results = [];
 for (const path of paths) {
   const file = path === "/" ? "out/index.html" : `out${path}index.html`;
@@ -75,6 +75,8 @@ for (const path of paths) {
       assert.ok(content.includes(phrase), phrase);
     assert.ok(!content.includes("Explore the platform"));
     assert.ok(!/Vietnam equity|VN30/.test(content));
+    assert.ok(doc.querySelector('#top img[fetchpriority="high"][src^="/media/product/"]'));
+    assert.ok(doc.querySelector("#see-it-in-action video[preload=none]"));
     for (const id of [
       "top",
       "audience",
@@ -104,6 +106,12 @@ for (const path of paths) {
     assert.deepEqual(org.sameAs, ["https://github.com/ai-backtest-lab"]);
     assert.deepEqual(org.founder.sameAs, ["https://github.com/DyanNguyen22"]);
   }
+  if (path === "/product/") {
+    const video = doc.querySelector("video");
+    assert.ok(video && !video.autoplay && video.getAttribute("preload") === "none");
+    assert.ok(video.querySelector('track[kind="captions"]'));
+    assert.equal(doc.querySelectorAll("figure.product-shot img").length, 4);
+  }
   results.push({
     path,
     title: doc.title,
@@ -120,7 +128,7 @@ assert.match(
   /\/_next\/static\/\*\n\s+Cache-Control: public, max-age=31536000, immutable/,
 );
 const redirects = await readFile("out/_redirects", "utf8");
-for (const path of ["/privacy", "/disclaimer"])
+for (const path of ["/privacy", "/disclaimer", "/product", "/terms"])
   assert.ok(redirects.includes(`${path} ${path}/ 301`), path);
 for (const [size, file] of [
   [16, "public/media/icon-16.png"],
