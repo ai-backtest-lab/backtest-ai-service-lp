@@ -20,4 +20,4 @@ Operator duyệt ngày 2026-10-11. Phase 1 của lộ trình: positioning → me
 
 ## SEO
 
-Title/description trang chủ đổi theo positioning; Organization có `founder` (Person, `sameAs` GitHub cá nhân). Organization chưa có `sameAs` tới GitHub org cho tới khi profile org trỏ ngược về site. Giữ canonical, OG image, sitemap, robots, indexability. `check-seo.mjs` kiểm danh sách section id bắt buộc thay vì đếm số section.
+Title/description trang chủ đổi theo positioning. `Organization.sameAs` = GitHub org (org trỏ ngược về site, kiểm 2026-10-11); `founder` là Person với `sameAs` GitHub cá nhân. About và footer có link GitHub cá nhân, org và repo demo public. Giữ canonical, OG image, sitemap, robots, indexability. `check-seo.mjs` kiểm danh sách section id bắt buộc thay vì đếm số section.

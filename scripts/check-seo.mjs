@@ -89,11 +89,20 @@ for (const path of paths) {
       "contact",
     ])
       assert.ok(doc.querySelector(`main > section#${id}`), id);
-    assert.ok(
-      [...doc.querySelectorAll("a")].some(
-        (a) => a.getAttribute("href") === "https://github.com/ai-backtest-lab",
-      ),
-    );
+    for (const href of [
+      "https://github.com/ai-backtest-lab",
+      "https://github.com/DyanNguyen22",
+      "https://github.com/ai-backtest-lab/backtest-dashboard-demo",
+    ])
+      assert.ok(
+        [...doc.querySelectorAll("a")].some(
+          (a) => a.getAttribute("href") === href,
+        ),
+        href,
+      );
+    const org = graph.find((node) => node["@type"] === "Organization");
+    assert.deepEqual(org.sameAs, ["https://github.com/ai-backtest-lab"]);
+    assert.deepEqual(org.founder.sameAs, ["https://github.com/DyanNguyen22"]);
   }
   results.push({
     path,

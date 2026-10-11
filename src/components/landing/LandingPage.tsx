@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import {
   audiences,
+  demoRepoUrl,
   demoUrl,
   faq,
   founderGithubUrl,
@@ -529,6 +530,9 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
                     <a href={githubOrgUrl}>
                       Organization GitHub · ai-backtest-lab <ArrowUpRight />
                     </a>
+                    <a href={demoRepoUrl}>
+                      Demo source · backtest-dashboard-demo <ArrowUpRight />
+                    </a>
                     <a href={`mailto:${identity.email}`}>
                       {identity.email} <ArrowUpRight />
                     </a>
@@ -609,7 +613,9 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </div>
         <nav aria-label="Legal navigation">
           <a href={demoUrl}>Interactive demo</a>
-          <a href={githubOrgUrl}>GitHub</a>
+          <a href={githubOrgUrl}>GitHub organization</a>
+          <a href={founderGithubUrl}>Founder GitHub</a>
+          <a href={demoRepoUrl}>Demo source</a>
           <a href="/privacy/">Privacy</a>
           <a href="/disclaimer/">Research disclaimer</a>
           <a href="/media/react-bits-license.txt">Component notices</a>

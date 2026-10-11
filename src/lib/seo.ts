@@ -1,5 +1,6 @@
 import type { Metadata, MetadataRoute } from "next";
 import {
+  githubOrgUrl,
   founderGithubUrl,
   founderProfile,
   type LandingIdentity,
@@ -133,6 +134,7 @@ export function pageSchema(identity: LandingIdentity, page: SeoPage) {
         height: 512,
       },
       email: identity.email,
+      sameAs: [githubOrgUrl],
       contactPoint: [
         {
           "@type": "ContactPoint",

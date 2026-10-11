@@ -19,6 +19,8 @@ export const siteConfig: LandingIdentity = {
 export const demoUrl = "https://demo.aibacktestlab.com/";
 export const githubOrgUrl = "https://github.com/ai-backtest-lab";
 export const founderGithubUrl = "https://github.com/DyanNguyen22";
+export const demoRepoUrl =
+  "https://github.com/ai-backtest-lab/backtest-dashboard-demo";
 // Operator-approved founder details (2026-10-11). No research start date is published.
 export const founderProfile = {
   role: "Founder & Software Engineer",

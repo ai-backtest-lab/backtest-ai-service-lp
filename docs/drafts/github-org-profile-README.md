@@ -32,5 +32,6 @@ The public demo is a static site on synthetic data; it does not run backtests on
 ## Repositories
 
 - [`backtest-ai-service-lp`](https://github.com/ai-backtest-lab/backtest-ai-service-lp): the public website.
+- [`backtest-dashboard-demo`](https://github.com/ai-backtest-lab/backtest-dashboard-demo): the static interactive demo (synthetic data).
 
 The backtesting engine itself is private.
