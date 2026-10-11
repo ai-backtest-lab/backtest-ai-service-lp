@@ -89,7 +89,14 @@ export default function ProductPage() {
             <ProductShot id="backtest-results" />
             <ProductShot id="risk-analysis" />
           </div>
-          <p className="product-note">Select a screenshot to open it at full size.</p>
+          <p className="product-note">
+            Select a screenshot to open it at full size. Charts in the Research
+            Lab and the video are built with{" "}
+            <a href="https://www.tradingview.com/lightweight-charts/">
+              TradingView Lightweight Charts™
+            </a>
+            .
+          </p>
         </section>
 
         <section id="workflow" className="section-shell product-block" aria-labelledby="workflow-title">

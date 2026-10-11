@@ -54,15 +54,13 @@ export default function Privacy() {
         </p>
         {!retention && <FounderPending decision="email retention period" />}
         <p>
-          You can ask to see or delete your messages by writing to{" "}
-          <a href={`mailto:${identity.email}`}>{identity.email}</a>. These
-          requests are handled by hand by the founder.
+          Questions about your data:{" "}
+          <a href={`mailto:${identity.email}`}>{identity.email}</a>.
         </p>
         <h2>Claude and Anthropic</h2>
         <p>
           Claude API integration is planned and not available today. The sites
-          do not send visitor data to Anthropic. This notice will be updated
-          before that changes.
+          do not send visitor data to Anthropic.
         </p>
         {minimumAge ? (
           <>

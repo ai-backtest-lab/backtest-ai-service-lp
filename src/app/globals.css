@@ -1344,6 +1344,9 @@ body {
   font-size: 12px;
   margin-top: 20px;
 }
+.product-note a {
+  color: var(--primary);
+}
 .transcript {
   margin-top: 28px;
   border-top: 1px solid var(--border);

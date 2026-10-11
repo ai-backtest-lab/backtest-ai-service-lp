@@ -50,7 +50,7 @@
       "id": "backtest-results",
       "title": "Backtest results",
       "alt": "Research Lab results: performance after fees, slippage and funding with a buy-and-hold reference, and a candlestick chart with the run's entries and exits.",
-      "caption": "Results after fees, slippage and funding, with buy and hold as a reference, and the candles and trades exactly as the run saw them.",
+      "caption": "Results after fees, slippage and funding, with buy and hold as a reference, and the candles and trades exactly as the run saw them. Chart by TradingView Lightweight Charts™.",
       "files": [
         {
           "width": 1280,

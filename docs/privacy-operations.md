@@ -1,10 +1,12 @@
 ---
-status: current
+status: draft
 last_verified: 2026-10-11
 code: src/app/privacy/page.tsx, src/content/founder.json, scripts/cloudflare-audit.mjs
 ---
 
-# Vận hành dữ liệu cá nhân (thủ công)
+# Vận hành dữ liệu cá nhân (thủ công) — bản nháp, chưa áp dụng
+
+Founder chưa thông qua quy trình này (2026-10-11). Khi thông qua: điền `contactEmailRetention`, rồi thêm lại câu về quyền xem/xóa thư trên Privacy.
 
 Phạm vi: aibacktestlab.com và demo.aibacktestlab.com, static trên Cloudflare; không form, tài khoản, cookie, storage hay analytics trong code (kiểm bundle 2026-10-11). Dữ liệu cá nhân chỉ đến từ hai nguồn:
 

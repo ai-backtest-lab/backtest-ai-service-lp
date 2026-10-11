@@ -18,6 +18,14 @@ code: src/content/founder.json, src/content/media.json, src/lib/founder.ts, scri
 | `rightsConfirmed` (media.json) | Gate | `true` | Founder đã xem 4 ảnh và video, đồng ý công bố |
 | `docs/cloudflare-audit.json` | Gate, Privacy | — | `CLOUDFLARE_API_TOKEN=... make cloudflare-audit`; nếu audit thấy Web Analytics, Bot Fight Mode (cookie), Logpush hay Email Routing khác Privacy thì sửa Privacy trước |
 
-Đã chốt (2026-10-11): chủ thể là Nguyen Thanh Dat, cá nhân tại Việt Nam, không phải công ty đã đăng ký; không đăng ngày bắt đầu nghiên cứu. Các trang pháp lý nên được luật sư rà soát; tài liệu này không phải tư vấn pháp lý.
+Founder quyết định 2026-10-11:
+
+- `governingLaw = "Vietnam"`: **đề xuất, chờ luật sư rà soát**. Chưa hiện trên Terms vì Terms chỉ in mục luật áp dụng khi có cả `disputeVenue`.
+- `disputeVenue`: để trống tới khi có rà soát pháp lý.
+- `contactEmailRetention`: đề xuất "12 months after the last relevant communication", **không công bố** cho tới khi có quy trình xóa và lưu giữ email tương ứng (bản nháp quy trình: `docs/privacy-operations.md`). Privacy hiện cũng không hứa xem/xóa thư theo yêu cầu.
+- `minimumAge = "18"`: công bố trên Privacy.
+- `legalTextApproved = false`, `rightsConfirmed = false`: chỉ founder đổi; agent không tự đổi cờ duyệt.
+
+Đã chốt trước đó (2026-10-11): chủ thể là Nguyen Thanh Dat, cá nhân tại Việt Nam, không phải công ty đã đăng ký; không đăng ngày bắt đầu nghiên cứu. Các trang pháp lý nên được luật sư rà soát; tài liệu này không phải tư vấn pháp lý.
 
 Việc ngoài repo do founder tự làm: tên hiển thị/bio/website trên GitHub cá nhân, README profile org và cá nhân (nháp ở `docs/drafts/`), LICENSE cho repo demo nếu muốn cho phép dùng lại.
