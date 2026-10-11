@@ -156,3 +156,71 @@ khi danh sách chưa rỗng, nên không deploy nhầm bản chưa xác nhận.
 
 Pricing page, thanh toán, đăng nhập, subscription, waitlist backend, form liên hệ,
 Claude API thật, mở mã backend, thay brand/OG, trang Real.
+
+## Addendum 2026-10-11 — chỉnh sửa của operator và kết quả kiểm chứng
+
+Operator duyệt hướng Commercial Readiness & Legal Pages với mười chỉnh sửa. Addendum
+này là thẩm quyền ở những điểm khác phần trên; phần trên giữ để truy vết.
+
+### Chủ thể vận hành
+
+AI Backtest Lab là dự án độc lập, tự cấp vốn, do founder vận hành tại Việt Nam,
+**không phải công ty đã đăng ký**. Không viết tên pháp nhân, mã số doanh nghiệp, địa
+chỉ đăng ký hay "Inc./LLC/Co., Ltd.". Terms và Privacy dùng "the founder who operates
+AI Backtest Lab (an individual based in Vietnam)"; tên hiển thị, luật áp dụng và nơi
+giải quyết tranh chấp lấy từ cấu hình founder (mục Quyết định founder).
+
+### Kết quả kiểm chứng hạ tầng (2026-10-11)
+
+- DNS `aibacktestlab.com`: NS Cloudflare; MX `route1–3.mx.cloudflare.net`, SPF
+  `include:_spf.mx.cloudflare.net` ⇒ email dùng **Cloudflare Email Routing**, chuyển tiếp
+  tới hộp thư đích của founder (nhà cung cấp chưa biết).
+- HTML trang chủ và demo không chứa beacon Cloudflare Web Analytics; response có header
+  NEL/Report-To của Cloudflare. **Chưa kiểm được cài đặt dashboard** (Web Analytics, Bot
+  Fight Mode, log/Logpush, Email Routing logs): token Wrangler đã hết hạn. Thêm script
+  read-only `make cloudflare-audit` (token do founder cấp lúc chạy, không lưu) và Privacy
+  chỉ hoàn tất sau khi có kết quả audit.
+- Dù frontend không có cookie/tracker, Cloudflare vẫn xử lý dữ liệu cá nhân khi phục vụ
+  request (IP, user agent, URL, thời điểm, báo lỗi mạng) và khi chuyển tiếp email (địa
+  chỉ, nội dung, metadata). Privacy phải nói rõ điều này.
+
+### Quyền dữ liệu bên thứ ba — kết luận: media công khai dùng dữ liệu synthetic
+
+| Nguồn | Điều khoản đã đọc | Kết luận cho media công khai |
+|---|---|---|
+| Binance (nến/funding của engine, `data.binance.vision` và `fapi.binance.com`) | Binance Vision Dataset Terms v1.0 (2026-08-26): CC BY-NC-SA 4.0; cấm dùng thương mại, cấm tích hợp vào sản phẩm tài chính thương mại; chart/derivative cũng chịu điều khoản | Không dùng ảnh/video chứa dữ liệu Binance trên site thương mại khi chưa có giấy phép thương mại |
+| Coin Metrics (board crypto) | Community data: CC BY-NC 4.0, không cho thương mại | Không dùng |
+| VCI/Vietcap (board VN30, VN preview) | Endpoint chart không công bố điều khoản tái phân phối; không xác định được quyền | Không dùng |
+
+Landing có khối Availability/early access nên được coi là mục đích thương mại. Vì vậy
+**toàn bộ screenshot và video công khai được chụp từ sản phẩm thật (Research Lab: cùng
+API, engine, runner container) chạy trên một nguồn thị trường synthetic có nhãn**, trong
+một media stack tách biệt. Strategy workspace run 1026, coverage matrix và market boards
+(dữ liệu Binance/Coin Metrics/VCI) **không** xuất hiện trên site; chỉ dùng nội bộ hoặc
+khi founder có văn bản cho phép. Đây cũng là rủi ro cấp sản phẩm, không chỉ cấp media:
+kế hoạch thương mại của backtest engine phụ thuộc giấy phép dữ liệu (mục Quyết định founder).
+
+Media stack: một server thị trường synthetic (seed cố định, instrument `SYNTH-TREND-PERP`,
+`SYNTH-RANGE-PERP`, nhãn "synthetic" trong tên hiển thị), Research API riêng cổng 8021 và
+database `research__media` riêng, không chạm ledger `research`. Mỗi ảnh/video có nhãn
+"Synthetic demonstration data · real product" in trên hình và trong caption; manifest
+media ghi `dataset: synthetic`, nguồn, ngày chụp, commit.
+
+### Email, tuổi, placeholder, cổng phát hành
+
+- Email: quy trình thủ công có tài liệu (`docs/privacy-operations.md`): giữ thư để trả
+  lời và theo dõi, rà soát định kỳ, xóa theo yêu cầu trong thời hạn founder chốt; **không**
+  hứa xóa tự động.
+- Tuổi: đề xuất 18+, chờ founder xác nhận.
+- Trang pháp lý công khai không bao giờ hiển thị câu "To be confirmed before launch" hay
+  placeholder. Khi một quyết định founder còn trống, đoạn liên quan chỉ hiện ghi chú nháp
+  ở môi trường development; bản build production bỏ đoạn đó, còn cổng phát hành fail.
+- Cổng phát hành `pnpm release:check` (và `build:release`, `deploy`) fail khi: còn quyết
+  định pháp lý trọng yếu chưa điền, chưa có kết quả Cloudflare audit khớp Privacy, media
+  công khai không phải synthetic hoặc thiếu xác nhận quyền, có claim gây hiểu nhầm
+  (giá, gói, số khách, ngày phát hành, lợi nhuận bảo đảm, Claude đã tích hợp), hoặc thiếu
+  metadata bắt buộc (dùng lại `seo:check`). `make check`, `pnpm build`, `make dev` không
+  bị chặn.
+- Giữ nguyên thiết kế, kiến trúc static export và cấu hình SEO đang chạy; chỉ thêm trang
+  `/product`, `/terms` vào cùng cơ chế.
+- Không deploy cho tới khi operator duyệt văn bản pháp lý cuối và media công khai.
