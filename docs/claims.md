@@ -14,7 +14,8 @@ code: src/components/landing/LandingPage.tsx, src/components/landing/ResearchPre
 | VN equities | Registry/chart workspace đã có; source-backed production execution chưa admitted | Operator 2026-10-11: không nhắc thị trường VN trên landing. "Vietnam" chỉ là nơi founder làm việc |
 | Demo/Market context | Private infrastructure/source-specific context đã tồn tại | Public roadmap là mở rộng validation/access; không gọi là public capability |
 | Claude analysis | Chưa có API integration/POC trong source landing | Planned trên hero, workflow, report, roadmap và FAQ |
-| Hero/product charts | UI illustration do source landing tạo; không lấy private account data | Illustrated preview, không measured PnL hoặc dữ liệu backtest thật |
+| Product media (hero, capabilities, `/product`, video) | Chụp 2026-10-11 từ Research Lab thật (backtest-service `36268082`, có thay đổi chưa commit ở frontend) trên thị trường synthetic, database `research__media`; ledger `research` giữ 48 run trước/sau | Nhãn "Real Backtesting Engine · Synthetic Market Data" trên mọi ảnh/video; số liệu là output trên dữ liệu synthetic, không phải hiệu suất giao dịch; workflow illustrations vẫn ghi Illustrative preview |
+| Pháp lý | Privacy/Terms/Disclaimer viết theo hành vi đã kiểm (bundle không cookie/storage/tracker; Cloudflare NEL; Email Routing qua MX) | Quyết định founder trống thì bản production bỏ câu; `release:check` fail tới khi founder điền và duyệt |
 | AI report | Concept copy để giải thích input→interpretation→test | Không live API response, không số liệu bịa |
 | Roadmap 2026–2028 | Mục tiêu operator, chưa phải delivered releases | Private backtest core exists / Claude POC planned; các phase sau Planned, Real không được mở lại |
 | Founder | Operator 2026-10-11: Nguyen Thanh Dat, Founder & Software Engineer, khoảng bốn năm kinh nghiệm web, backend, kiến trúc kỹ thuật; GitHub cá nhân `DyanNguyen22` (tồn tại từ 2022-08-26) | Ghi "independently developed and bootstrapped in Vietnam", "not an incorporated company". Không đăng ngày bắt đầu nghiên cứu, không thành tích, nhà đầu tư, khách hàng hay pháp nhân |
@@ -23,7 +24,7 @@ code: src/components/landing/LandingPage.tsx, src/components/landing/ResearchPre
 | Research validation | Research Lab có quality check, compare runs, recent-period check (`QualityCheckPanel`, `ResearchCompare`, `RecentCheckButton` trong backtest-service) | Out-of-sample validation rộng hơn vẫn Planned |
 | Contact | Operator cung cấp founder@aibacktestlab.com và support@aibacktestlab.com | Operator xác nhận gửi/nhận và trả lời ngày 2026-10-08; agent kiểm mailto/UI/JSON-LD, không tự gửi mail |
 
-Automatic review đã từ chối đưa screenshot run thật trực tiếp vào public assets trước content/redaction review. Site mới dùng illustration có nhãn, không upload hoặc publish capture private. Nếu muốn ảnh product thật sau này, phải curate/redact/approve payload trước khi thay visual. Việc website không expose tài khoản không suy ra mọi lời giải thích AI tương lai đã được kiểm.
+Operator quyết định ngày 2026-10-11 dùng ảnh và video thật của sản phẩm (thay quyết định cũ chỉ dùng illustration), với điều kiện chỉ dùng dữ liệu thị trường synthetic vì giấy phép dữ liệu Binance/Coin Metrics/VCI không cho dùng thương mại hoặc chưa rõ. Founder vẫn phải xác nhận (`rightsConfirmed`) trước khi phát hành. Việc website không expose tài khoản không suy ra mọi lời giải thích AI tương lai đã được kiểm.
 
 ## Đối chiếu source cho vòng content cuối — 2026-10-08
 

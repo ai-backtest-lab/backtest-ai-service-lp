@@ -20,7 +20,7 @@ Các text/reveal tweens còn lại được scoped và cleanup đúng owner; hai
 
 ## Public boundary và trạng thái sản phẩm
 
-Next.js App Router/TypeScript/Tailwind/shadcn, static export `out/`. Routes chỉ `/`, `/privacy/`, `/disclaimer/`, robots/sitemap/icon. Không dashboard hoặc `/api` trong artifact, không gọi trading app/Claude API, không auth/registration/waitlist backend. Không có secret trong source hay client bundle.
+Next.js App Router/TypeScript/Tailwind/shadcn, static export `out/`. Routes `/`, `/product/`, `/privacy/`, `/terms/`, `/disclaimer/`, robots/sitemap/icon. Header và footer dùng chung (`SiteHeader`, `SiteFooter`) trên mọi trang. Không dashboard hoặc `/api` trong artifact, không gọi trading app/Claude API, không auth/registration/waitlist backend. Không có secret trong source hay client bundle.
 
 Historical crypto research và market views là capability của private product hiện có, không phải feature runtime của site landing này. Landing không nhắc thị trường VN (operator 2026-10-11). Demo có private infrastructure; roadmap mô tả mở rộng validation/access, không phủ nhận service cũ đã tồn tại. Real vẫn frozen ở app cũ; roadmap không authorizes tiếp tục hoặc pilot.
 

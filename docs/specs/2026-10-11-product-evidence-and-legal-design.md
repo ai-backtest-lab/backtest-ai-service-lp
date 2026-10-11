@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 last_verified: 2026-10-11
 code: src/components/landing/, src/app/, src/lib/landingContent.ts, src/lib/seo.ts, public/media/, scripts/, docs/claims.md
 ---
@@ -224,3 +224,13 @@ media ghi `dataset: synthetic`, nguồn, ngày chụp, commit.
 - Giữ nguyên thiết kế, kiến trúc static export và cấu hình SEO đang chạy; chỉ thêm trang
   `/product`, `/terms` vào cùng cơ chế.
 - Không deploy cho tới khi operator duyệt văn bản pháp lý cuối và media công khai.
+
+## Triển khai 2026-10-11 (Phase 2–3) — khác biệt so với phần trên
+
+- Nhãn công khai theo brief positioning: "Real Backtesting Engine · Synthetic Market Data" (thay "Synthetic demonstration data · real product").
+- Bốn ảnh lấy từ Research Lab (không có strategy workspace run 1026, coverage matrix hay market boards): `dashboard-overview` = form + Quality check; `strategy-research` = form với tham số và chính sách phí/slippage/vốn; `backtest-results` = Performance + Chart (ghép hai ảnh); `risk-analysis` = so sánh hai biến thể tham số. Random-entry percentile không có trong Research Lab nên không nhắc.
+- Ảnh và video cắt bỏ dòng phụ đề trang "…on real history" vì dữ liệu là synthetic. Chart vẫn ghi giá crypto là "VND" và giờ UTC+7: operator quyết định giữ nguyên UI; `/product` ghi đây là lỗi hiển thị đã biết.
+- Video 76 s, một lần quay, chỉ cắt đoạn trắng lúc tải trang; caption là `<track>` WebVTT (không burn-in) + transcript trên `/product`.
+- Quyết định founder nằm trong `src/content/founder.json` (không phải `landingContent.ts`); production bỏ câu còn trống, không có chữ "To be confirmed".
+- Cổng phát hành không gắn vào build của Cloudflare Workers Builds (deploy command ở dashboard là `wrangler deploy`); operator chạy `make release-check` trước khi merge.
+- Market boards và mọi ảnh dữ liệu Binance/Coin Metrics/VCI không xuất hiện; gallery `/product` có bốn ảnh.
