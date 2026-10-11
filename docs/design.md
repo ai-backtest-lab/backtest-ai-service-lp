@@ -1,6 +1,6 @@
 ---
 status: current
-last_verified: 2026-10-08
+last_verified: 2026-10-11
 code: src/app/, src/components/landing/, src/lib/landingContent.ts, next.config.ts, Makefile
 ---
 
@@ -12,7 +12,7 @@ Brand và copy theo [tài liệu operator](brand-roadmap.md): AI Backtest Lab, a
 
 ## Bố cục và motion
 
-Mười sections: Hero, Problem, Six-step workflow, Capabilities, Claude AI, Validation, Architecture, Roadmap, About, Contact/FAQ. Hero dùng Plasma trên dark/green semantic tokens; headline ổn định đọc được từ HTML, TextType dùng ở dòng phụ. Theo chỉ đạo operator, Product và Claude hiển thị static/linear trên mọi viewport: toàn bộ sáu bước và ba phần report cùng có trong luồng trang, không pin hoặc tiến độ theo cuộn. ScrollReveal dùng cho statement, MaskedHeading cho Validation, GSAP reveal nhẹ cho các section khác.
+Mười một sections (2026-10-11): Hero, Audience (Individuals / Teams & Businesses), Problem (hai nhóm), Six-step workflow (Idea → Configuration → Execution → Performance & risk → Validation → AI interpretation Planned), Capabilities, Claude AI, Validation, Architecture, Roadmap, About, Contact/FAQ. Hero dùng Plasma trên dark/green semantic tokens; headline ổn định đọc được từ HTML, TextType dùng ở dòng phụ. Theo chỉ đạo operator, Product và Claude hiển thị static/linear trên mọi viewport: toàn bộ sáu bước và ba phần report cùng có trong luồng trang, không pin hoặc tiến độ theo cuộn. ScrollReveal dùng cho statement, MaskedHeading cho Validation, GSAP reveal nhẹ cho các section khác.
 
 Không còn chapter navigation, inactive panels hoặc report-phase dimming. Nội dung Report là concept minh họa, không giả response API Claude. Chart là illustration không có performance metrics. Nhãn Planned/Illustrative hiện ở ngay visual và hero, không có testimonials, client counts hay giả lợi nhuận.
 
@@ -22,7 +22,7 @@ Các text/reveal tweens còn lại được scoped và cleanup đúng owner; hai
 
 Next.js App Router/TypeScript/Tailwind/shadcn, static export `out/`. Routes chỉ `/`, `/privacy/`, `/disclaimer/`, robots/sitemap/icon. Không dashboard hoặc `/api` trong artifact, không gọi trading app/Claude API, không auth/registration/waitlist backend. Không có secret trong source hay client bundle.
 
-Historical crypto research và market views là capability của private product hiện có, không phải feature runtime của site landing này. VN execution còn blocked và được nói rõ trong copy. Demo có private infrastructure; roadmap mô tả mở rộng validation/access, không phủ nhận service cũ đã tồn tại. Real vẫn frozen ở app cũ; roadmap không authorizes tiếp tục hoặc pilot.
+Historical crypto research và market views là capability của private product hiện có, không phải feature runtime của site landing này. Landing không nhắc thị trường VN (operator 2026-10-11). Demo có private infrastructure; roadmap mô tả mở rộng validation/access, không phủ nhận service cũ đã tồn tại. Real vẫn frozen ở app cũ; roadmap không authorizes tiếp tục hoặc pilot.
 
 Theo yêu cầu deployment mới, production metadata/indexing được bật và public values cố định trong source, không có environment gate. Founder/support emails do operator cung cấp; operator xác nhận mailbox delivery/reply ngày 2026-10-08; không suy ra domain/Cloudflare account đã được kiểm. Không auto-deploy hoặc gửi application.
 
