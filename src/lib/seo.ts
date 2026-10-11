@@ -1,5 +1,9 @@
 import type { Metadata, MetadataRoute } from "next";
-import type { LandingIdentity } from "./landingContent";
+import {
+  founderGithubUrl,
+  founderProfile,
+  type LandingIdentity,
+} from "./landingContent";
 export interface SeoPage {
   path: string;
   title: string;
@@ -8,9 +12,9 @@ export interface SeoPage {
 }
 export const homeSeo: SeoPage = {
   path: "/",
-  title: "Quantitative Backtesting & Trading Research",
+  title: "Quantitative Research for Individuals & Teams",
   description:
-    "Private quantitative backtesting for trading strategy research: performance, cost and risk analysis. Claude-powered research assistance is planned.",
+    "Backtest trading strategies, understand performance and risk, and research with evidence. Quantitative research for individuals and teams; AI insights are planned.",
 };
 export const privacySeo: SeoPage = {
   path: "/privacy/",
@@ -111,7 +115,17 @@ export function pageSchema(identity: LandingIdentity, page: SeoPage) {
       name: identity.brand,
       url: identity.domain + "/",
       description:
-        "An independently developed quantitative trading research project with Claude API analysis planned.",
+        "An independent, founder-operated quantitative trading research project building a backtesting and research platform for individuals and teams. Claude API analysis is planned.",
+      ...(identity.founder
+        ? {
+            founder: {
+              "@type": "Person",
+              name: identity.founder,
+              jobTitle: founderProfile.role,
+              sameAs: [founderGithubUrl],
+            },
+          }
+        : {}),
       logo: {
         "@type": "ImageObject",
         url: identity.domain + "/media/icon-512.png",

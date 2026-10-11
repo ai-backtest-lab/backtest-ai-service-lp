@@ -5,7 +5,7 @@ export function WorkflowStory() {
   return (
     <div className="workflow-story">
       <div className="workflow-panels">
-        {workflow.map((step, i) => (
+        {workflow.map((step) => (
           <article key={step.number} className="workflow-panel">
             <div className="workflow-caption">
               <span className="eyebrow">
@@ -14,39 +14,23 @@ export function WorkflowStory() {
               <h3>{step.title}</h3>
               <p>{step.body}</p>
               <Badge
-                variant={i < 3 ? "outline" : "secondary"}
+                variant={"preview" in step ? "outline" : "secondary"}
                 className="max-w-full whitespace-normal"
               >
                 {step.status}
               </Badge>
             </div>
-            {i < 3 ? (
-              <ResearchPreview chapter={i} />
+            {"preview" in step ? (
+              <ResearchPreview chapter={step.preview} />
             ) : (
               <div className="workflow-idea">
-                <span className="mono">
-                  {i === 3
-                    ? "Report → Interpretation"
-                    : i === 4
-                      ? "Observation → Hypothesis"
-                      : "Hypothesis → New test"}
-                </span>
-                <h4>
-                  {i === 3
-                    ? "What does the evidence actually say?"
-                    : i === 4
-                      ? "What deserves another test?"
-                      : "One answer. A better question."}
-                </h4>
-                <p>
-                  {i === 3
-                    ? "Claude will read the supplied report, identify limitations and explain the metrics used."
-                    : i === 4
-                      ? "A suggested test remains a hypothesis until a quantitative experiment validates it."
-                      : "The researcher chooses the next experiment. AI has no authority to run or trade automatically."}
-                </p>
+                <span className="mono">{step.idea.flow}</span>
+                <h4>{step.idea.question}</h4>
+                <p>{step.idea.body}</p>
                 <Badge variant="outline">
-                  Planned workflow · Concept preview
+                  {step.status.startsWith("Planned")
+                    ? "Planned workflow · Concept preview"
+                    : "Research workflow · Concept preview"}
                 </Badge>
               </div>
             )}

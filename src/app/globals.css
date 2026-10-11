@@ -647,6 +647,7 @@ body {
   display: flex;
   gap: 15px;
 }
+.audience-section,
 .problem-section,
 .product-section,
 .capabilities-section,
@@ -669,28 +670,87 @@ body {
   font-weight: 500;
   letter-spacing: -0.05em;
 }
-.problem-rows {
+.problem-groups {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
-.problem-rows article {
+.problem-groups article {
   border-top: 1px solid var(--border);
   padding-top: 21px;
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 12px;
 }
-.problem-rows article > .mono {
+.problem-groups ol {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.problem-groups li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.problem-groups li > .mono {
   font-size: 10px;
+  line-height: 2.2;
   color: var(--primary);
 }
-.problem-rows article > svg {
-  display: none;
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
 }
-.problem-rows p {
-  font-size: 13px;
-  margin-top: 13px;
+.audience-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  padding: 40px;
+  transition: border-color 0.3s ease;
+}
+.audience-card:hover,
+.audience-card:focus-within {
+  border-color: color-mix(in oklch, var(--primary) 45%, var(--border));
+}
+.audience-card h3 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 18px 0 12px;
+}
+.audience-who {
+  font-size: 14px;
+  color: var(--muted-foreground);
+}
+.audience-card ul {
+  display: grid;
+  gap: 11px;
+  margin: 26px 0;
+  font-size: 14px;
+}
+.audience-card li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.audience-card li svg {
+  flex: none;
+  width: 15px;
+  margin-top: 3px;
+  color: var(--primary);
+}
+.audience-note {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+  margin-bottom: 28px;
+}
+.audience-card > a {
+  margin-top: auto;
+  align-self: flex-start;
 }
 .workflow-panels {
   display: flex;
@@ -1020,6 +1080,43 @@ body {
   color: var(--primary) !important;
   font-size: 11px !important;
 }
+.founder-card {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+.founder-card .founder-name {
+  margin-bottom: 8px;
+}
+.founder-card h3 {
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+.founder-card p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.founder-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 18px;
+  font-size: 12px;
+}
+.founder-links a {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--primary);
+}
+.founder-links svg {
+  width: 14px;
+}
+.availability-copy {
+  font-size: 15px;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
 .contact-section {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -1283,6 +1380,7 @@ body {
   .eyebrow {
     font-size: 9px;
   }
+  .audience-section,
   .problem-section,
   .product-section,
   .capabilities-section,
@@ -1300,20 +1398,19 @@ body {
   .problem-section .scroll-reveal-text {
     font-size: 37px;
   }
-  .problem-rows {
+  .problem-groups,
+  .audience-grid {
     grid-template-columns: 1fr;
     gap: 26px;
   }
-  .problem-rows article {
-    grid-template-columns: 20px 1fr 18px;
+  .problem-groups li {
+    font-size: 14px;
   }
-  .problem-rows article > svg {
-    display: block;
-    width: 17px;
-    color: var(--primary);
+  .audience-card {
+    padding: 26px;
   }
-  .problem-rows p {
-    margin-top: 8px;
+  .audience-card h3 {
+    font-size: 24px;
   }
   .section-intro {
     grid-template-columns: 1fr;

@@ -8,11 +8,11 @@ describe("public website configuration", () => {
       email: "founder@aibacktestlab.com",
       supportEmail: "support@aibacktestlab.com",
       release: true,
-      founder: null,
+      founder: "Nguyen Thanh Dat",
     });
   });
   it("keeps unimplemented AI and roadmap goals distinct from available features", () => {
-    expect(workflow[3].status).toContain("Planned");
+    expect(workflow[5].status).toContain("Planned");
     expect(roadmap).toHaveLength(4);
   });
 });

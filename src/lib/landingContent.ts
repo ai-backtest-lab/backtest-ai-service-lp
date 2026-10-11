@@ -10,58 +10,133 @@ export interface LandingIdentity {
 export const siteConfig: LandingIdentity = {
   brand: "AI Backtest Lab",
   domain: "https://aibacktestlab.com",
-  founder: null,
+  founder: "Nguyen Thanh Dat",
   email: "founder@aibacktestlab.com",
   supportEmail: "support@aibacktestlab.com",
   release: true,
 };
 // The public interactive demo runs synthetic data on its own subdomain.
 export const demoUrl = "https://demo.aibacktestlab.com/";
+export const githubOrgUrl = "https://github.com/ai-backtest-lab";
+export const founderGithubUrl = "https://github.com/DyanNguyen22";
+// Operator-approved founder details (2026-10-11). No research start date is published.
+export const founderProfile = {
+  role: "Founder & Software Engineer",
+  experience:
+    "About four years of experience in web development, backend systems and technical architecture.",
+} as const;
 export function landingIdentity(): LandingIdentity {
   return siteConfig;
 }
 export const heroLines = [
-  "Build the hypothesis.",
-  "Backtest with data.",
-  "Understand the risk.",
-  "Validate again.",
+  "Test strategies.",
+  "Understand risks.",
+  "Research with evidence.",
 ];
+export const audiences = [
+  {
+    id: "individuals",
+    label: "Individuals",
+    who: "Independent traders, strategy developers and quantitative researchers.",
+    title: "From a trading idea to a measurable research result.",
+    needs: [
+      "Test trading strategies systematically",
+      "Evaluate historical performance",
+      "Understand risk, drawdown and research metrics",
+      "Compare and improve trading hypotheses",
+      "Skip building the research infrastructure yourself",
+    ],
+    note: "The research workspace is private today. The public demo shows the workflow on synthetic data.",
+  },
+  {
+    id: "teams",
+    label: "Teams & Businesses",
+    who: "Small research teams, fintech startups and organizations exploring quantitative research.",
+    title: "A structured foundation for systematic trading research.",
+    needs: [
+      "Consistent strategy evaluation",
+      "Repeatable research workflows",
+      "Performance and risk reporting",
+      "Clarity on research infrastructure and integration needs",
+    ],
+    note: "Team features, enterprise deployment and paid services are not available today. Contact the founder to discuss your needs.",
+  },
+] as const;
+export const problems = [
+  {
+    label: "Individuals",
+    items: [
+      "Strategy ideas are hard to test reliably.",
+      "Manual backtesting takes time.",
+      "Performance metrics are hard to interpret.",
+      "Historical profits can hide substantial risk.",
+    ],
+  },
+  {
+    label: "Teams",
+    items: [
+      "Research workflows become fragmented.",
+      "Strategy comparisons lack consistency.",
+      "Internal research tooling needs engineering time.",
+      "Results must be reproducible and validated.",
+    ],
+  },
+] as const;
+const privateStatus = "Private workspace · not publicly available";
 export const workflow = [
   {
     number: "01",
-    title: "Define strategy",
-    body: "Pick a strategy, parameters, symbol and historical window.",
-    status: "Private workspace · not publicly available",
+    title: "Trading idea",
+    body: "Start from a question you can test: a rule, a market and a time window.",
+    status: "Defined by the researcher",
+    idea: {
+      flow: "Idea → Hypothesis",
+      question: "What exactly are you testing?",
+      body: "A clear hypothesis makes the result measurable and the next test comparable.",
+    },
   },
   {
     number: "02",
-    title: "Run backtest",
-    body: "Execute a historical simulation with explicit data and cost assumptions.",
-    status: "Private workspace · not publicly available",
+    title: "Strategy configuration",
+    body: "Pick a strategy, parameters, symbol, interval and historical window.",
+    status: privateStatus,
+    preview: 0,
   },
   {
     number: "03",
-    title: "Measure results",
-    body: "Inspect recorded outcomes, drawdowns, costs and individual trades.",
-    status: "Private workspace · not publicly available",
+    title: "Backtest execution",
+    body: "Run a historical crypto simulation with explicit fees, funding and slippage assumptions.",
+    status: privateStatus,
+    preview: 1,
   },
   {
     number: "04",
-    title: "Analyze with Claude",
-    body: "Planned: send structured metrics, costs and assumptions to Claude for risk interpretation and explanations.",
-    status: "Planned Claude integration",
+    title: "Performance & risk analysis",
+    body: "Inspect returns after costs, drawdown, the equity curve and individual trades.",
+    status: privateStatus,
+    preview: 2,
   },
   {
     number: "05",
-    title: "Form new hypotheses",
-    body: "Turn an observation into a question you can test quantitatively.",
-    status: "Planned research workflow",
+    title: "Research validation",
+    body: "Review automated quality checks, compare runs and re-test on a recent period.",
+    status: "Private workspace · broader validation planned",
+    idea: {
+      flow: "Result → Evidence check",
+      question: "Does the result survive scrutiny?",
+      body: "Quality checks, run comparison and a recent-period check exist today. Broader out-of-sample validation is planned.",
+    },
   },
   {
     number: "06",
-    title: "Validate again",
-    body: "Use the quantitative engine to test follow-up hypotheses. Broader out-of-sample validation is planned.",
-    status: "Planned research workflow",
+    title: "AI-assisted interpretation",
+    body: "Planned: Claude reads structured results and explains risks, limits and testable hypotheses.",
+    status: "Planned Claude integration",
+    idea: {
+      flow: "Report → Interpretation",
+      question: "What does the evidence actually say?",
+      body: "A suggested test remains a hypothesis until the engine validates it. AI has no authority to trade.",
+    },
   },
 ] as const;
 export const roadmap = [
@@ -101,7 +176,11 @@ export const faq = [
   ],
   [
     "Which markets can I backtest?",
-    "Historical crypto backtesting exists in the private workspace. Vietnam equity research is an internal preview. Source-backed backtesting and execution are not available. Other market views provide informational context.",
+    "Historical crypto backtesting exists in the private workspace. Other market views provide informational context only.",
+  ],
+  [
+    "Can teams use AI Backtest Lab?",
+    "Not yet as a team product. Collaboration features, enterprise deployment and paid services do not exist today. Contact the founder to discuss your research needs.",
   ],
   [
     "Is the platform publicly available?",

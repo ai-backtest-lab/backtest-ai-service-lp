@@ -22,7 +22,7 @@ describe("truthful standalone landing", () => {
   it("renders the brand, planned AI and meaningful CTA without a trading endpoint", () => {
     render(<LandingPage identity={landingIdentity()} />);
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
-      "Backtest with Data.",
+      "Quantitative Research for Individuals & Teams.",
     );
     expect(
       screen.getByText(
@@ -43,14 +43,14 @@ describe("truthful standalone landing", () => {
     })) {
       expect(link).toHaveAttribute("href", "https://demo.aibacktestlab.com/");
     }
-    expect(screen.getByRole("link", { name: /founder@/ })).toHaveAttribute(
-      "href",
-      "mailto:founder@aibacktestlab.com",
-    );
+    for (const link of screen.getAllByRole("link", { name: /founder@/ }))
+      expect(link).toHaveAttribute("href", "mailto:founder@aibacktestlab.com");
   });
   it("provides founder and support actions without a contact form or extra section", () => {
     const { container } = render(<LandingPage identity={landingIdentity()} />);
-    expect(screen.getByRole("link", { name: "Contact us" })).toHaveAttribute(
+    expect(
+      screen.getByRole("link", { name: "Discuss Research Needs" }),
+    ).toHaveAttribute(
       "href",
       expect.stringContaining("mailto:founder@aibacktestlab.com"),
     );
@@ -61,7 +61,21 @@ describe("truthful standalone landing", () => {
     expect(
       screen.getByRole("link", { name: /support@aibacktestlab.com/ }),
     ).toHaveAttribute("href", "mailto:support@aibacktestlab.com");
-    expect(container.querySelectorAll("main > section")).toHaveLength(10);
+    expect(
+      [...container.querySelectorAll("main > section")].map((s) => s.id),
+    ).toEqual([
+      "top",
+      "audience",
+      "problem",
+      "product",
+      "capabilities",
+      "claude-ai",
+      "validation",
+      "architecture",
+      "roadmap",
+      "about",
+      "contact",
+    ]);
     expect(container.querySelector("form")).toBeNull();
   });
 });

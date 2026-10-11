@@ -22,7 +22,7 @@ try {
   await page.waitForFunction(
     () =>
       document.querySelector(".hero-type .text-type__content")?.textContent ===
-      "Build the hypothesis.",
+      "Test strategies.",
   );
   await page.screenshot({ path: "assets/hero-source.png" });
   await page.evaluate(() => {

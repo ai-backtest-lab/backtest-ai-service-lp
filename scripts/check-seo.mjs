@@ -37,7 +37,7 @@ for (const path of paths) {
   if (path === "/") {
     assert.equal(
       doc.title,
-      "AI Backtest Lab | Quantitative Backtesting & Trading Research",
+      "AI Backtest Lab | Quantitative Research for Individuals & Teams",
     );
     for (const email of [
       "founder@aibacktestlab.com",
@@ -49,7 +49,7 @@ for (const path of paths) {
         ),
       );
     const description =
-      "Private quantitative backtesting for trading strategy research: performance, cost and risk analysis. Claude-powered research assistance is planned.";
+      "Backtest trading strategies, understand performance and risk, and research with evidence. Quantitative research for individuals and teams; AI insights are planned.";
     for (const selector of [
       'meta[name="description"]',
       'meta[property="og:description"]',
@@ -64,7 +64,9 @@ for (const path of paths) {
     const content = doc.querySelector("main").textContent.replace(/\s+/g, " ");
     for (const phrase of [
       "Private workspace · not publicly available",
-      "Source-backed backtesting and execution are not available.",
+      "synthetic demonstration data",
+      "Built for Research.",
+      "Nguyen Thanh Dat",
       "Demo sandbox runtime",
       "Claude POC planned",
       "structured backtest metrics",
@@ -72,7 +74,26 @@ for (const path of paths) {
     ])
       assert.ok(content.includes(phrase), phrase);
     assert.ok(!content.includes("Explore the platform"));
-    assert.equal(doc.querySelectorAll("main > section").length, 10);
+    assert.ok(!/Vietnam equity|VN30/.test(content));
+    for (const id of [
+      "top",
+      "audience",
+      "problem",
+      "product",
+      "capabilities",
+      "claude-ai",
+      "validation",
+      "architecture",
+      "roadmap",
+      "about",
+      "contact",
+    ])
+      assert.ok(doc.querySelector(`main > section#${id}`), id);
+    assert.ok(
+      [...doc.querySelectorAll("a")].some(
+        (a) => a.getAttribute("href") === "https://github.com/ai-backtest-lab",
+      ),
+    );
   }
   results.push({
     path,

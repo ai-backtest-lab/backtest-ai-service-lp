@@ -17,9 +17,14 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import {
+  audiences,
   demoUrl,
   faq,
+  founderGithubUrl,
+  founderProfile,
+  githubOrgUrl,
   heroLines,
+  problems,
   roadmap,
   type LandingIdentity,
 } from "@/lib/landingContent";
@@ -71,31 +76,27 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           <div className="hero-grid">
             <div className="hero-copy">
               <div data-hero-copy className="hero-eyebrow">
-                <span className="status-dot" /> Quantitative research · AI
-                planned
+                <span className="status-dot" /> Backtesting · Quantitative
+                research · AI planned
               </div>
               <h1>
-                Backtest with Data.
+                Quantitative Research{" "}
                 <br />
-                <span>
-                  Understand Your
-                  <br />
-                  Strategy with AI.
-                </span>
+                <span>for Individuals &amp;&nbsp;Teams.</span>
               </h1>
               <p data-hero-copy className="hero-description">
-                AI Backtest Lab is a private quantitative research platform for
-                historical crypto backtesting. Inspect strategy performance and
-                risk before deciding what to test next. Claude-powered
-                explanations and research assistance are planned.
+                Test trading strategies, understand performance and risk, and
+                turn research ideas into evidence-based decisions — with
+                AI-assisted insights on the roadmap. The backtesting engine runs
+                historical crypto research today in a private workspace.
               </p>
               <div data-hero-copy className="hero-actions">
                 <a href={demoUrl} className={buttonVariants({ size: "lg" })}>
-                  Try the interactive demo{" "}
+                  Explore Interactive Demo{" "}
                   <ArrowUpRight data-icon="inline-end" />
                 </a>
-                <a href="#roadmap" className="text-link">
-                  See our AI roadmap <ArrowRight />
+                <a href="#audience" className="text-link">
+                  Individuals & teams <ArrowRight />
                 </a>
               </div>
               <p data-hero-copy className="hero-status">
@@ -136,49 +137,97 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </div>
           </div>
           <div className="hero-bottom mono">
-            <span>Build → Backtest → Quantify → Explain → Validate</span>
-            <a href="#problem">
+            <span>Idea → Backtest → Analyze → Validate → Interpret</span>
+            <a href="#audience">
               Scroll to explore <span>↓</span>
             </a>
           </div>
         </section>
+        <section id="audience" className="section-shell audience-section">
+          <div className="section-meta">
+            <span className="eyebrow">01 / Who it is for</span>
+            <span className="mono">One research platform</span>
+          </div>
+          <div className="section-intro" data-reveal>
+            <h2>
+              Built for individuals
+              <br />
+              <span>and research teams.</span>
+            </h2>
+            <p>
+              Both start from the same core: historical backtesting with
+              explicit costs, performance and risk metrics, and validation
+              checks. Team-specific features are not built yet.
+            </p>
+          </div>
+          <div className="audience-grid">
+            {audiences.map((audience) => (
+              <article
+                key={audience.id}
+                className="audience-card"
+                aria-labelledby={`audience-${audience.id}`}
+                data-reveal
+              >
+                <span className="eyebrow">{audience.label}</span>
+                <h3 id={`audience-${audience.id}`}>{audience.title}</h3>
+                <p className="audience-who">{audience.who}</p>
+                <ul>
+                  {audience.needs.map((need) => (
+                    <li key={need}>
+                      <Check />
+                      {need}
+                    </li>
+                  ))}
+                </ul>
+                <p className="audience-note">{audience.note}</p>
+                {audience.id === "individuals" ? (
+                  <a
+                    href={demoUrl}
+                    className={buttonVariants({ variant: "outline" })}
+                  >
+                    Explore Interactive Demo{" "}
+                    <ArrowUpRight data-icon="inline-end" />
+                  </a>
+                ) : (
+                  <a
+                    href={`mailto:${identity.email}?subject=Research%20needs`}
+                    className={buttonVariants({ variant: "outline" })}
+                  >
+                    Discuss Your Research Needs{" "}
+                    <ArrowUpRight data-icon="inline-end" />
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
         <section id="problem" className="section-shell problem-section">
           <div className="section-meta">
-            <span className="eyebrow">01 / The research problem</span>
+            <span className="eyebrow">02 / The research problem</span>
             <span className="mono">Beyond the headline return</span>
           </div>
           <ScrollReveal baseOpacity={0.65} blurStrength={1.5}>
             A backtest can show the numbers. Understanding them is harder.
           </ScrollReveal>
-          <div className="problem-rows">
-            {[
-              [
-                "Too many metrics",
-                "A return alone leaves drawdown behavior, trading costs and sample limitations unanswered.",
-              ],
-              [
-                "Hidden risks",
-                "Historical results can conceal overfitting, market sensitivity and assumptions that deserve scrutiny.",
-              ],
-              [
-                "Slow research iterations",
-                "Turning a result into the next testable question still takes deliberate, manual work.",
-              ],
-            ].map(([title, body], i) => (
-              <article key={title} data-reveal>
-                <span className="mono">0{i + 1}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-                <ArrowUpRight />
+          <div className="problem-groups">
+            {problems.map((group) => (
+              <article key={group.label} data-reveal>
+                <span className="eyebrow">{group.label}</span>
+                <ol>
+                  {group.items.map((item, i) => (
+                    <li key={item}>
+                      <span className="mono">0{i + 1}</span>
+                      {item}
+                    </li>
+                  ))}
+                </ol>
               </article>
             ))}
           </div>
         </section>
         <section id="product" className="section-shell product-section">
           <div className="section-meta">
-            <span className="eyebrow">02 / How it works</span>
+            <span className="eyebrow">03 / How it works</span>
             <Badge variant="outline">Research before you trade</Badge>
           </div>
           <div className="section-intro" data-reveal>
@@ -188,9 +237,9 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
               <span>Six deliberate steps.</span>
             </h2>
             <p>
-              Every decision begins with quantitative evidence. Claude is
-              planned to help translate that evidence into a better research
-              question.
+              The same loop serves an individual researcher and a team: every
+              decision begins with quantitative evidence. Claude is planned to
+              help interpret that evidence, not to replace it.
             </p>
           </div>
           <WorkflowStory />
@@ -200,7 +249,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           className="section-shell capabilities-section"
         >
           <div className="section-meta">
-            <span className="eyebrow">03 / The quantitative foundation</span>
+            <span className="eyebrow">04 / The quantitative foundation</span>
             <span className="mono">
               Private product · Market-specific coverage
             </span>
@@ -234,16 +283,16 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           <div className="coverage-note" data-reveal>
             <span className="mono">Market scope</span>
             <p>
-              Historical backtesting focuses on crypto. Vietnam equity research
-              is an internal preview. Source-backed backtesting and execution
-              are not available. Other market views provide informational
-              context.
+              Historical backtesting focuses on crypto and runs in a private
+              development environment. The public interactive demo is static:
+              it uses synthetic demonstration data and does not run backtests
+              on a backend.
             </p>
           </div>
         </section>
         <section id="claude-ai" className="section-shell claude-section">
           <div className="section-meta">
-            <span className="eyebrow">04 / Planned Claude API integration</span>
+            <span className="eyebrow">05 / Planned Claude API integration</span>
             <Badge variant="secondary">AI analysis · Planned</Badge>
           </div>
           <div className="section-intro" data-reveal>
@@ -284,7 +333,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="validation" className="section-shell validation-section">
           <div className="section-meta">
-            <span className="eyebrow">05 / Validation & trust</span>
+            <span className="eyebrow">06 / Validation & trust</span>
             <ShieldCheck />
           </div>
           <div className="masked-wrap" data-reveal>
@@ -342,7 +391,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           className="section-shell architecture-section"
         >
           <div className="section-meta">
-            <span className="eyebrow">06 / Independent services</span>
+            <span className="eyebrow">07 / Independent services</span>
             <span className="mono">
               Separate boundaries. One research vision.
             </span>
@@ -407,7 +456,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="roadmap" className="section-shell roadmap-section">
           <div className="section-meta">
-            <span className="eyebrow">07 / The 24-month roadmap</span>
+            <span className="eyebrow">08 / The 24-month roadmap</span>
             <span className="mono">Q4 2026 — Q3 2028</span>
           </div>
           <div className="section-intro" data-reveal>
@@ -442,7 +491,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </section>
         <section id="about" className="section-shell about-section">
           <div className="section-meta">
-            <span className="eyebrow">08 / Built with intent</span>
+            <span className="eyebrow">09 / Built with intent</span>
             <span className="mono">Independent project</span>
           </div>
           <div className="about-grid" data-reveal>
@@ -454,8 +503,8 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             <div>
               <p>
                 AI Backtest Lab is an independently developed quantitative
-                research startup for independent researchers, crypto strategy
-                developers and systematic traders. We focus on repeatable
+                research startup for independent researchers, strategy
+                developers and small research teams. We focus on repeatable
                 strategy evaluation and planned AI-assisted explanations.
               </p>
               <p>
@@ -465,36 +514,59 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
                 hypothesis through quantitative backtesting.
               </p>
               {identity.founder && (
-                <p className="founder-name mono">Built by {identity.founder}</p>
+                <div className="founder-card">
+                  <p className="founder-name mono">{founderProfile.role}</p>
+                  <h3>{identity.founder}</h3>
+                  <p>{founderProfile.experience}</p>
+                  <p>
+                    AI Backtest Lab is independently developed and bootstrapped
+                    in Vietnam. It is not an incorporated company.
+                  </p>
+                  <div className="founder-links">
+                    <a href={founderGithubUrl}>
+                      Founder GitHub · DyanNguyen22 <ArrowUpRight />
+                    </a>
+                    <a href={githubOrgUrl}>
+                      Organization GitHub · ai-backtest-lab <ArrowUpRight />
+                    </a>
+                    <a href={`mailto:${identity.email}`}>
+                      {identity.email} <ArrowUpRight />
+                    </a>
+                  </div>
+                </div>
               )}
             </div>
           </div>
         </section>
         <section id="contact" className="section-shell contact-section">
           <div className="contact-heading" data-reveal>
-            <span className="eyebrow">09 / What comes next</span>
+            <span className="eyebrow">10 / Product availability</span>
             <h2>
-              Research better.
+              Built for Research.
               <br />
-              <span>Understand more.</span>
-              <br />
-              Test again.
+              <span>Preparing for Early Access.</span>
             </h2>
+            <p className="availability-copy">
+              AI Backtest Lab is under active development. Explore the public
+              interactive demo, view the research workflow, or contact us to
+              discuss your individual or team research needs.
+            </p>
             <a href={demoUrl} className={buttonVariants({ size: "lg" })}>
-              Try the interactive demo{" "}
+              Explore Interactive Demo{" "}
               <ArrowUpRight data-icon="inline-end" />
             </a>
             <p className="risk-disclosure">
-              Private research workspace · public early access planned. Contact
-              the founder for partnerships or product questions, or request
-              support using the links below.
+              The full research engine runs in a private development
+              environment · the public demo uses synthetic demonstration data ·
+              Claude-powered research assistance is planned · public early
+              access planned, not available today.
             </p>
             <div className="contact-actions">
               <a
                 className="contact-email"
-                href={`mailto:${identity.email}?subject=AI%20Backtest%20Lab%20inquiry`}
+                href={`mailto:${identity.email}?subject=Research%20needs`}
               >
-                Contact us <ArrowUpRight />
+                Discuss Research Needs <ArrowUpRight />
               </a>
               <a
                 className="contact-email"
@@ -537,6 +609,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
         </div>
         <nav aria-label="Legal navigation">
           <a href={demoUrl}>Interactive demo</a>
+          <a href={githubOrgUrl}>GitHub</a>
           <a href="/privacy/">Privacy</a>
           <a href="/disclaimer/">Research disclaimer</a>
           <a href="/media/react-bits-license.txt">Component notices</a>
