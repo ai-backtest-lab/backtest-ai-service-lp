@@ -87,11 +87,11 @@ export default function ProductPage() {
           <div className="product-gallery">
             <ProductShot id="strategy-research" />
             <ProductShot id="backtest-results" />
+            <ProductShot id="backtest-execution" />
             <ProductShot id="risk-analysis" />
           </div>
           <p className="product-note">
-            Select a screenshot to open it at full size. Charts in the Research
-            Lab and the video are built with{" "}
+            Charts in the Research Lab and the video are built with{" "}
             <a href="https://www.tradingview.com/lightweight-charts/">
               TradingView Lightweight Charts™
             </a>

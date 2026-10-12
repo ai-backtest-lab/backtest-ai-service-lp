@@ -108,9 +108,11 @@ for (const path of paths) {
   }
   if (path === "/product/") {
     const video = doc.querySelector("video");
+    // Plays only when scrolled into view (ProductVideo), so no autoplay attribute or preload.
     assert.ok(video && !video.autoplay && video.getAttribute("preload") === "none");
+    assert.ok(!video.hasAttribute("controls") && doc.querySelector(".video-toggle"));
     assert.ok(video.querySelector('track[kind="captions"]'));
-    assert.equal(doc.querySelectorAll("figure.product-shot img").length, 4);
+    assert.equal(doc.querySelectorAll("figure.product-shot img").length, 5);
   }
   results.push({
     path,

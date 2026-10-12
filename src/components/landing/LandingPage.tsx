@@ -286,11 +286,6 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
               outcomes remain inspectable in the research workspace.
             </p>
           </div>
-          <div className="evidence-grid">
-            <ProductShot id="backtest-results" />
-            <ProductShot id="strategy-research" />
-            <ProductShot id="risk-analysis" />
-          </div>
           <div className="capability-grid">
             {capabilities.map(([title, body, status, Icon]) => (
               <article key={title} data-reveal>

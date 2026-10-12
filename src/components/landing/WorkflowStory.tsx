@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { workflow } from "@/lib/landingContent";
-import { ResearchPreview } from "./ResearchPreview";
+import { ProductShot } from "@/components/product/ProductShot";
 export function WorkflowStory() {
   return (
     <div className="workflow-story">
@@ -14,14 +14,14 @@ export function WorkflowStory() {
               <h3>{step.title}</h3>
               <p>{step.body}</p>
               <Badge
-                variant={"preview" in step ? "outline" : "secondary"}
+                variant={"shot" in step ? "outline" : "secondary"}
                 className="max-w-full whitespace-normal"
               >
                 {step.status}
               </Badge>
             </div>
-            {"preview" in step ? (
-              <ResearchPreview chapter={step.preview} />
+            {"shot" in step ? (
+              <ProductShot id={step.shot} sizes="(max-width: 1023px) 100vw, 60vw" />
             ) : (
               <div className="workflow-idea">
                 <span className="mono">{step.idea.flow}</span>
