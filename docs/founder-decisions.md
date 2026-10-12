@@ -15,7 +15,7 @@ code: src/content/founder.json, src/content/media.json, src/lib/founder.ts, scri
 | `contactEmailRetention` | Privacy | `"12 months"` | Quy trình thủ công ở `docs/privacy-operations.md`; không hứa xóa tự động |
 | `minimumAge` | Privacy | `"18"` | Đề xuất 18 |
 | `legalTextApproved` | Gate | `true` | Founder đã đọc Privacy, Terms, Disclaimer bản production |
-| `rightsConfirmed` (media.json) | Gate | `true` | Founder đã xem 4 ảnh và video, đồng ý công bố |
+| `rightsConfirmed` (media.json) | Gate | `true` | Founder đã xem 5 ảnh và video, đồng ý công bố |
 | `docs/cloudflare-audit.json` | Gate, Privacy | — | `CLOUDFLARE_API_TOKEN=... make cloudflare-audit`; nếu audit thấy Web Analytics, Bot Fight Mode (cookie), Logpush hay Email Routing khác Privacy thì sửa Privacy trước |
 
 Founder quyết định 2026-10-11:

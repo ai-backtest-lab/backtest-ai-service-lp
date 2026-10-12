@@ -234,3 +234,10 @@ media ghi `dataset: synthetic`, nguồn, ngày chụp, commit.
 - Quyết định founder nằm trong `src/content/founder.json` (không phải `landingContent.ts`); production bỏ câu còn trống, không có chữ "To be confirmed".
 - Cổng phát hành không gắn vào build của Cloudflare Workers Builds (deploy command ở dashboard là `wrangler deploy`); operator chạy `make release-check` trước khi merge.
 - Market boards và mọi ảnh dữ liệu Binance/Coin Metrics/VCI không xuất hiện; gallery `/product` có bốn ảnh.
+
+## Thay đổi 2026-10-12 (operator duyệt)
+
+- Workflow step 02–05 dùng ảnh thật thay `ResearchPreview` (đã gỡ): 02 `strategy-research`, 03 `backtest-execution` (ảnh mới: Runs + Details, chụp 2026-10-12), 04 `backtest-results`, 05 `risk-analysis` (so sánh run). Step 01 và 06 giữ card chữ; step 06 là Planned nên không được có ảnh.
+- Landing bỏ evidence grid ở `#capabilities` (lặp ảnh của các step); gallery `/product` có năm ảnh.
+- Ảnh không còn là liên kết tới bản lớn; `srcset` vẫn phục vụ bản 2400 cho màn hình mật độ cao.
+- Video: không `controls`, `muted`, `loop`, `playsInline`, `preload="none"`; chỉ tải và phát khi ≥ 50% nằm trong viewport (IntersectionObserver), dừng khi ra ngoài; không tự chạy khi `prefers-reduced-motion`. Có nút Pause/Play riêng (WCAG 2.2.2), không được bỏ. Privacy ghi "the video loads only when it scrolls into view"; Disclaimer ghi ngày chụp October 11 and 12, 2026.

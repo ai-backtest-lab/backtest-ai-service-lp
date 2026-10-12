@@ -19,7 +19,7 @@ Local helpers dùng Python3/Linux: `make dev` loopback3220; `make preview` serve
 Ảnh và video công khai chụp từ Research Lab thật của backtest-service (UI `127.0.0.1:3210`), nhưng mọi gọi `/api/research/*` được Playwright chuyển sang một Research API riêng (`8021`, database `research__media`) đọc server thị trường synthetic (`scripts/media/synthetic_market.py`, `8031`, seed cố định). Mọi `/api/*` khác bị chặn trong lúc chụp. Không cần sửa UI của backtest-service; chỉ có `research__media` được thêm vào `ALLOWED_DATABASES` (commit `36268082`).
 
 - `make media-stack-up` / `make media-stack-down`: bật/tắt stack; `down` in số run của `research` và `research__media` trước/sau để kiểm cách ly. `scripts/media/stack.sh reset` xóa riêng `research__media`.
-- `make media-capture`: reset → chụp 4 ảnh (`scripts/media/capture.mjs`) → encode WebP 1280/2400 có dải nhãn (`encode.mjs`) → reset → quay video (`record.mjs`) → MP4/WebM, poster, VTT (`encode-video.mjs`). Ảnh gốc 2x nằm ở `tmp/media/raw/`, không commit. Manifest `src/content/media.json` ghi nhãn, ngày chụp, commit backtest-service, transcript.
+- `make media-capture`: reset → chụp 5 ảnh (`scripts/media/capture.mjs`) → encode WebP 1280/2400 có dải nhãn (`encode.mjs`) → reset → quay video (`record.mjs`) → MP4/WebM, poster, VTT (`encode-video.mjs`). Ảnh gốc 2x nằm ở `tmp/media/raw/`, không commit. Manifest `src/content/media.json` ghi nhãn, ngày chụp, commit backtest-service, transcript.
 - Cần backtest-service Research UI đang chạy ở 3210, Docker và runner image (`make research-setup` bên backtest-service).
 
 ## Cổng phát hành và audit Cloudflare

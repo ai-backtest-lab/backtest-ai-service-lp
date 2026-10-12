@@ -1,7 +1,7 @@
 ---
 status: current
-last_verified: 2026-10-11
-code: src/components/landing/LandingPage.tsx, src/components/landing/ResearchPreview.tsx, src/lib/landingContent.ts
+last_verified: 2026-10-12
+code: src/components/landing/LandingPage.tsx, src/components/landing/WorkflowStory.tsx, src/lib/landingContent.ts
 ---
 
 # Claim ledger
@@ -14,7 +14,7 @@ code: src/components/landing/LandingPage.tsx, src/components/landing/ResearchPre
 | VN equities | Registry/chart workspace đã có; source-backed production execution chưa admitted | Operator 2026-10-11: không nhắc thị trường VN trên landing. "Vietnam" chỉ là nơi founder làm việc |
 | Demo/Market context | Private infrastructure/source-specific context đã tồn tại | Public roadmap là mở rộng validation/access; không gọi là public capability |
 | Claude analysis | Chưa có API integration/POC trong source landing | Planned trên hero, workflow, report, roadmap và FAQ |
-| Product media (hero, capabilities, `/product`, video) | Chụp 2026-10-11 từ Research Lab thật (backtest-service `36268082`, có thay đổi chưa commit ở frontend) trên thị trường synthetic, database `research__media`; ledger `research` giữ 48 run trước/sau | Nhãn "Real Backtesting Engine · Synthetic Market Data" trên mọi ảnh/video; số liệu là output trên dữ liệu synthetic, không phải hiệu suất giao dịch; workflow illustrations vẫn ghi Illustrative preview |
+| Product media (hero, workflow steps, `/product`, video) | Chụp 2026-10-11 (ảnh `backtest-execution`: 2026-10-12) từ Research Lab thật (backtest-service `36268082`, có thay đổi chưa commit ở frontend) trên thị trường synthetic, database `research__media`; ledger `research` giữ 48 run trước/sau | Nhãn "Real Backtesting Engine · Synthetic Market Data" trên mọi ảnh/video; số liệu là output trên dữ liệu synthetic, không phải hiệu suất giao dịch; step 02–05 dùng ảnh thật, step 01 và 06 là card chữ (06 là Planned, không có ảnh giả) |
 | Pháp lý | Privacy/Terms/Disclaimer viết theo hành vi đã kiểm (bundle không cookie/storage/tracker; Cloudflare NEL; Email Routing qua MX) | Quyết định founder trống thì bản production bỏ câu; `release:check` fail tới khi founder điền và duyệt |
 | AI report | Concept copy để giải thích input→interpretation→test | Không live API response, không số liệu bịa |
 | Roadmap 2026–2028 | Mục tiêu operator, chưa phải delivered releases | Private backtest core exists / Claude POC planned; các phase sau Planned, Real không được mở lại |
