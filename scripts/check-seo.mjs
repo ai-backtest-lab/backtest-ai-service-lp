@@ -68,7 +68,7 @@ for (const path of paths) {
       "Built for Research.",
       "Nguyen Thanh Dat",
       "Demo sandbox runtime",
-      "Claude POC planned",
+      "AI analysis POC planned",
       "structured backtest metrics",
       "public early access planned",
     ])
@@ -83,7 +83,7 @@ for (const path of paths) {
       "problem",
       "product",
       "capabilities",
-      "claude-ai",
+      "ai",
       "validation",
       "architecture",
       "roadmap",

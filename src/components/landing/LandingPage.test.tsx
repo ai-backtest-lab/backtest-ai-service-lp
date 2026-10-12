@@ -26,7 +26,7 @@ describe("truthful standalone landing", () => {
     );
     expect(
       screen.getByText(
-        "Claude API integration is planned and is not yet available in the current product.",
+        "Planned model: Claude by Anthropic, used through the Claude API. Not integrated yet.",
       ),
     ).toBeVisible();
     expect(
@@ -69,7 +69,7 @@ describe("truthful standalone landing", () => {
       "problem",
       "product",
       "capabilities",
-      "claude-ai",
+      "ai",
       "validation",
       "architecture",
       "roadmap",

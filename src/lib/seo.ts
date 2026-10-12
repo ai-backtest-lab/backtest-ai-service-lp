@@ -42,7 +42,7 @@ export const disclaimerSeo: SeoPage = {
   path: "/disclaimer/",
   title: "Research Disclaimer",
   description:
-    "Limits of historical backtesting, synthetic product media, the static demo and the planned Claude analysis layer at AI Backtest Lab.",
+    "Limits of historical backtesting, synthetic product media, the static demo and the planned AI analysis layer at AI Backtest Lab.",
   modified: "2026-10-11",
 };
 export function publicSeoPages(): SeoPage[] {
@@ -96,7 +96,7 @@ export function pageMetadata(
           url: "/media/og.png",
           width: 1200,
           height: 630,
-          alt: "AI Backtest Lab hero: Backtest with Data. Understand Your Strategy with AI. Claude integration planned.",
+          alt: "AI Backtest Lab hero: Backtest with Data. Understand Your Strategy with AI. AI analysis planned.",
         },
       ],
     },
@@ -132,7 +132,7 @@ export function pageSchema(identity: LandingIdentity, page: SeoPage) {
       name: identity.brand,
       url: identity.domain + "/",
       description:
-        "An independent, founder-operated quantitative trading research project building a backtesting and research platform for individuals and teams. Claude API analysis is planned.",
+        "An independent, founder-operated quantitative trading research project building a backtesting and research platform for individuals and teams. AI analysis is planned.",
       ...(identity.founder
         ? {
             founder: {

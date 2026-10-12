@@ -55,7 +55,7 @@ export function ClaudeStory() {
         <div className="ai-report">
           <div className="report-toolbar">
             <span className="report-mark">✳</span>
-            <span>Claude research report</span>
+            <span>AI research report</span>
             <Badge variant="outline">Planned</Badge>
           </div>
           <p className="report-caption mono">

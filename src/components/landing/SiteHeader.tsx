@@ -13,7 +13,7 @@ import {
 import { demoUrl } from "@/lib/landingContent";
 const links = [
   ["Platform", "/#product"],
-  ["Claude AI", "/#claude-ai"],
+  ["AI", "/#ai"],
   ["Architecture", "/#architecture"],
   ["Roadmap", "/#roadmap"],
   ["About", "/#about"],

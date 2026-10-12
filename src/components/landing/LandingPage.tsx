@@ -238,8 +238,8 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </h2>
             <p>
               The same loop serves an individual researcher and a team: every
-              decision begins with quantitative evidence. Claude is planned to
-              help interpret that evidence, not to replace it.
+              decision begins with quantitative evidence. AI analysis is planned
+              to help interpret that evidence, not to replace it.
             </p>
           </div>
           <WorkflowStory />
@@ -311,30 +311,29 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             </p>
           </div>
         </section>
-        <section id="claude-ai" className="section-shell claude-section">
+        <section id="ai" className="section-shell claude-section">
           <div className="section-meta">
-            <span className="eyebrow">05 / Planned Claude API integration</span>
+            <span className="eyebrow">05 / Planned AI analysis</span>
             <Badge variant="secondary">AI analysis · Planned</Badge>
           </div>
           <div className="section-intro" data-reveal>
             <h2>
-              Planned: Claude explains
+              Planned: AI explains
               <br />
               <span>what the evidence says.</span>
             </h2>
             <p>
-              The planned Anthropic Claude API integration will receive
-              structured backtest metrics, trade summaries, strategy parameters,
-              data coverage and cost assumptions. It will help researchers
-              interpret drawdowns, identify weaknesses and propose testable
-              hypotheses. The quantitative engine calculates results and
-              validates each follow-up experiment; Claude does not predict
-              returns or place orders.
+              The planned AI analysis will receive structured backtest metrics,
+              trade summaries, strategy parameters, data coverage and cost
+              assumptions. It will read the engine&apos;s structured results and
+              explain risks, limits and testable hypotheses. The quantitative
+              engine calculates results and validates each follow-up
+              experiment; the AI does not predict returns or place orders.
             </p>
           </div>
           <p className="ai-status">
-            Claude API integration is planned and is not yet available in the
-            current product.
+            Planned model: Claude by Anthropic, used through the Claude API.
+            Not integrated yet.
           </p>
           <ClaudeStory />
           <div className="ai-capabilities">
@@ -370,7 +369,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
           </div>
           <div className="validation-grid" data-reveal>
             <p>
-              Our engine is responsible for computation. The planned Claude
+              Our engine is responsible for computation. The planned AI
               layer is responsible for interpretation. A compelling explanation
               remains a hypothesis until it survives another test.
             </p>
@@ -439,7 +438,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
               ],
               [
                 "02",
-                "Claude AI research",
+                "AI research",
                 "Grounded report explanations, run-specific questions and follow-up hypotheses.",
                 "Planned",
               ],
@@ -530,7 +529,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
               </p>
               <p>
                 Our direction is an evidence-led research workflow: inspect the
-                data and assumptions behind a result, use planned Claude
+                data and assumptions behind a result, use planned AI
                 analysis to understand its limits, and validate the next
                 hypothesis through quantitative backtesting.
               </p>
@@ -582,7 +581,7 @@ export function LandingPage({ identity }: { identity: LandingIdentity }) {
             <p className="risk-disclosure">
               The full research engine runs in a private development
               environment · the public demo uses synthetic demonstration data ·
-              Claude-powered research assistance is planned · public early
+              AI research assistance is planned · public early
               access planned, not available today.
             </p>
             <div className="contact-actions">

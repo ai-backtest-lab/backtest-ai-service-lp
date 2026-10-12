@@ -33,7 +33,7 @@ const status = {
     "Market context views, for information only",
   ],
   Planned: [
-    "Claude analysis of structured results: risk explanations and testable hypotheses",
+    "AI analysis of structured results: risk explanations and testable hypotheses",
     "Broader out-of-sample validation",
     "Public early access",
     "Features for research teams",

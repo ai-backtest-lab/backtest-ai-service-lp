@@ -172,7 +172,7 @@ function track(p) {
           .click();
         await p.getByRole("dialog").waitFor({ state: "hidden" });
       }
-      await p.locator("#claude-ai").scrollIntoViewIfNeeded();
+      await p.locator("#ai").scrollIntoViewIfNeeded();
       assert.equal(
         await p.locator(".claude-story").getAttribute("data-phase"),
         null,

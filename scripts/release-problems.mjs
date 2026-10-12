@@ -8,6 +8,7 @@ export const FORBIDDEN = [
   [/\b\d[\d,]*\+?\s+(customers|clients|paying users)\b/i, "a customer count"],
   [/\bguaranteed? (returns?|profits?|results?)\b/i, "guaranteed returns"],
   [/\bClaude (is|now) (integrated|available|live)\b/i, "Claude integrated today"],
+  [/\b(currently|now) (uses?|using|runs? on) Claude\b|\bpowered by Claude\b|\bClaude-powered\b/i, "Claude in use today"],
   [/\b(Inc\.|LLC|Co\., Ltd\.|JSC)\b/, "a company legal form"],
   [/To be confirmed|\bTODO\b|lorem ipsum|founder decision pending/i, "a placeholder"],
 ];

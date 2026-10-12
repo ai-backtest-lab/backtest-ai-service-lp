@@ -128,8 +128,8 @@ export const workflow = [
   {
     number: "06",
     title: "AI-assisted interpretation",
-    body: "Planned: Claude reads structured results and explains risks, limits and testable hypotheses.",
-    status: "Planned Claude integration",
+    body: "Planned: AI reads structured results and explains risks, limits and testable hypotheses.",
+    status: "Planned AI analysis",
     idea: {
       flow: "Report → Interpretation",
       question: "What does the evidence actually say?",
@@ -140,9 +140,9 @@ export const workflow = [
 export const roadmap = [
   {
     date: "Q4 2026 — Q1 2027",
-    title: "Backtesting core & Claude POC",
-    body: "Continue hardening auditable research evidence and define the first grounded Claude proof of concept.",
-    status: "Private backtest core exists · Claude POC planned",
+    title: "Backtesting core & AI analysis POC",
+    body: "Continue hardening auditable research evidence and define the first grounded AI analysis proof of concept.",
+    status: "Private backtest core exists · AI analysis POC planned",
   },
   {
     date: "Q2 — Q3 2027",
@@ -165,12 +165,12 @@ export const roadmap = [
 ] as const;
 export const faq = [
   [
-    "Is Claude integrated today?",
-    "Claude API integration is planned. Tested integrations will be labeled separately when available.",
+    "Is AI analysis available today?",
+    "No. AI analysis is planned and will use Claude by Anthropic through the Claude API. Tested integrations will be labeled separately when available.",
   ],
   [
     "Does AI execute trades?",
-    "No. The planned Claude layer interprets supplied research evidence. It has no authority to submit trades or change trading controls.",
+    "No. The planned AI layer interprets supplied research evidence. It has no authority to submit trades or change trading controls.",
   ],
   [
     "Which markets can I backtest?",

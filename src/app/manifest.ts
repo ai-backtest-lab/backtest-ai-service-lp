@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "AI Backtest Lab",
     short_name: "AI Backtest Lab",
     description:
-      "Quantitative backtesting research with Claude-assisted interpretation planned.",
+      "Quantitative backtesting research with AI-assisted interpretation planned.",
     start_url: "/",
     display: "browser",
     background_color: "#090d0b",

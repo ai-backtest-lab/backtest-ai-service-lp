@@ -15,7 +15,7 @@ export function SiteFooter({ identity }: { identity: LandingIdentity }) {
             </span>
             <span>AI Backtest Lab</span>
           </Link>
-          <p>Private quantitative research. Claude analysis planned.</p>
+          <p>Private quantitative research. AI analysis planned.</p>
           <div className="footer-contact">
             <a href={`mailto:${identity.email}`}>
               <span>Founder</span>
