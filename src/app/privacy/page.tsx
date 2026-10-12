@@ -29,8 +29,8 @@ export default function Privacy() {
           The sites have no accounts, forms, payments or newsletter. They set
           no cookies, store nothing in your browser and include no analytics,
           advertising or tracking scripts. Fonts, images and the product video
-          are served from our own domain, and the video only loads when you
-          press play.
+          are served from our own domain, and the video loads only when it
+          scrolls into view.
         </p>
         <h2>Hosting by Cloudflare</h2>
         <p>
@@ -73,7 +73,7 @@ export default function Privacy() {
         <h2>Changes</h2>
         <p>
           We will update this page when the sites change how they handle data.
-          Updated October 11, 2026.
+          Updated October 12, 2026.
         </p>
       </main>
       <SiteFooter identity={identity} />

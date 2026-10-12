@@ -29,7 +29,8 @@ export default function Disclaimer() {
           synthetic market. The prices, trades and results in them are outputs
           on synthetic data. They are not trading performance, not a
           recommendation and not results on any real market. They were
-          captured on October 11, 2026, and the product may have changed since.
+          captured on October 11 and 12, 2026, and the product may have changed
+          since.
         </p>
         <h2>The interactive demo</h2>
         <p>
@@ -49,7 +50,7 @@ export default function Disclaimer() {
           endorsed by Anthropic, accepted into a startup program or guaranteed
           to receive benefits.
         </p>
-        <p>Updated October 11, 2026.</p>
+        <p>Updated October 12, 2026.</p>
       </main>
       <SiteFooter identity={identity} />
     </>

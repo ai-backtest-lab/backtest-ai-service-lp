@@ -16,7 +16,7 @@ This notice covers aibacktestlab.com and the public interactive demo at demo.aib
 
 #### What the sites do not collect
 
-The sites have no accounts, forms, payments or newsletter. They set no cookies, store nothing in your browser and include no analytics, advertising or tracking scripts. Fonts, images and the product video are served from our own domain, and the video only loads when you press play.
+The sites have no accounts, forms, payments or newsletter. They set no cookies, store nothing in your browser and include no analytics, advertising or tracking scripts. Fonts, images and the product video are served from our own domain, and the video loads only when it scrolls into view.
 
 #### Hosting by Cloudflare
 
