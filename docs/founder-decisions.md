@@ -1,6 +1,6 @@
 ---
 status: current
-last_verified: 2026-10-11
+last_verified: 2026-10-12
 code: src/content/founder.json, src/content/media.json, src/lib/founder.ts, scripts/release-problems.mjs
 ---
 
@@ -24,7 +24,7 @@ Founder quyết định 2026-10-11:
 - `disputeVenue`: để trống tới khi có rà soát pháp lý.
 - `contactEmailRetention`: đề xuất "12 months after the last relevant communication", **không công bố** cho tới khi có quy trình xóa và lưu giữ email tương ứng (bản nháp quy trình: `docs/privacy-operations.md`). Privacy hiện cũng không hứa xem/xóa thư theo yêu cầu.
 - `minimumAge = "18"`: công bố trên Privacy.
-- `legalTextApproved = false`, `rightsConfirmed = false`: chỉ founder đổi; agent không tự đổi cờ duyệt.
+- `legalTextApproved`, `rightsConfirmed`: chỉ founder đổi; agent không tự đổi cờ duyệt. Ngày 2026-10-12 founder duyệt Privacy, Terms, Disclaimer và 5 ảnh + video bản production (merge `791ee80`) và cho phép đặt cả hai thành `true`.
 
 Đã chốt trước đó (2026-10-11): chủ thể là Nguyen Thanh Dat, cá nhân tại Việt Nam, không phải công ty đã đăng ký; không đăng ngày bắt đầu nghiên cứu. Các trang pháp lý nên được luật sư rà soát; tài liệu này không phải tư vấn pháp lý.
 
