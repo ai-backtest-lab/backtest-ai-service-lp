@@ -61,6 +61,7 @@ const manifest = JSON.parse(await readFile(MANIFEST, "utf8"));
 const sources = {
   "dashboard-overview": `${RAW}/dashboard-overview.png`,
   "strategy-research": `${RAW}/strategy-research.png`,
+  "backtest-execution": await stacked(["backtest-execution-a", "backtest-execution-b"], 48),
   "backtest-results": await stacked(["backtest-results-a", "backtest-results-b"], 48),
   "risk-analysis": `${RAW}/risk-analysis.png`,
 };

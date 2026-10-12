@@ -1,4 +1,4 @@
-// Captures the four public product screenshots from the real Research Lab UI
+// Captures the five public product screenshots from the real Research Lab UI
 // (backtest-service, :3210) while its API calls go to the isolated media stack
 // (synthetic market data, database research__media). Run `scripts/media/stack.sh up` first.
 // Output: tmp/media/raw/*.png (2x, not committed); encode with scripts/media/encode.mjs.
@@ -75,6 +75,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     // Two shots, stacked by encode.mjs: a single clip taller than the viewport is cut off.
     await shotSpan(page, card(page, "Performance"), card(page, "Performance"), "backtest-results-a");
     await shotSpan(page, card(page, "Chart"), card(page, "Chart"), "backtest-results-b");
+    // Backtest execution: the run list with the two finished runs, and the run's recorded details.
+    await shotSpan(page, card(page, "Runs"), card(page, "Runs"), "backtest-execution-a");
+    await shotSpan(page, card(page, "Details"), card(page, "Details"), "backtest-execution-b");
     // Risk analysis: two parameter variants side by side.
     const boxes = page.getByRole("checkbox");
     await boxes.nth(0).check();

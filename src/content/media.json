@@ -47,6 +47,25 @@
       ]
     },
     {
+      "id": "backtest-execution",
+      "title": "Backtest execution",
+      "alt": "Research Lab run list with two completed Donchian breakout runs on the synthetic 4h market, and the run details: variants tried for the strategy, the recent 12-month check counter, and Markdown and JSON report downloads.",
+      "caption": "Every run is kept and counted. Each finished run can be reopened, checked on the recent 12 months or exported as a report.",
+      "files": [
+        {
+          "width": 1280,
+          "height": 444,
+          "bytes": 24776
+        },
+        {
+          "width": 2400,
+          "height": 832,
+          "bytes": 53594
+        }
+      ],
+      "captured": "2026-10-12"
+    },
+    {
       "id": "backtest-results",
       "title": "Backtest results",
       "alt": "Research Lab results: performance after fees, slippage and funding with a buy-and-hold reference, and a candlestick chart with the run's entries and exits.",
